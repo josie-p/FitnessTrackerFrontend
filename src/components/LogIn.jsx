@@ -41,6 +41,8 @@ const LogIn = () => {
                     setPassword(e.target.value);
                 }}></input>
                 <button type="submit">login</button>
+                <h4>Don't have an account?</h4>
+                <h5> Register Here </h5>
             </form>
         </div>
     )

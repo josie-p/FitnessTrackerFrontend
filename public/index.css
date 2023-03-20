@@ -1,13 +1,45 @@
+html{
+    height: 100%;
+}
 body {
     margin: 0;
+    height: 100%;
+    /* background: linear-gradient(to right top, #F3A712, #7D82B8); */
+    background: linear-gradient(#F27059, #F7B267);
 }
 
 #navbar {
-    background-color: black;
+    background-color: #F25C54;
     color: white;
     display: flex;
     align-items: center;
     flex-grow: 1;
+    justify-content: space-between;
     max-height: 10%;
     min-height: 40px;
+}
+#siteName{
+    display: flex;
+}
+#navLinks{
+    display: flex;
+    align-items: center;
+}
+#navbar a{
+    margin: 5px;
+    padding: 5px;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 50,
+  'wght' 1000,
+  'GRAD' 0,
+  'opsz' 48;
+  color: #F7B267;
+  padding: 10px;
+}
+.tangerineIcon {
+    height: 40px;
+    margin: 10px;
 }

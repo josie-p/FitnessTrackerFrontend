@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { HomePage, Main, LogIn } from "./components";
+import { HomePage, Main, LogIn, Register } from "./components";
 import { createBrowserRouter,
          RouterProvider,
          Route, createRoutesFromElements, } from "react-router-dom";
@@ -9,6 +9,7 @@ import { createBrowserRouter,
             <Route path="/" element={<Main/>}>
                 <Route index element={<HomePage/>}/>
                 <Route path="/login" element={<LogIn/>} />
+                <Route path="/register" element={<Register/>} />
             </Route>
         ))
 
