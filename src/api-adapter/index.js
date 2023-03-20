@@ -1,4 +1,4 @@
-const BASE_URL = "https://fitnesstrac-kr.herokuapp.com/api";
+const BASE_URL = "https://fitness-tracker-api-iv35.onrender.com/api";
 
 function makeHeaders (token){
     return {
@@ -45,5 +45,42 @@ export const registerAPI = async(username, password) =>{
         return result;
     } catch(error){
         console.error(error);
+    }
+}
+
+export const getActivitiesAPI = async() => {
+    try{
+        const response = await fetch(`${BASE_URL}/activities`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+            },
+        });
+
+        const result = await response.json();
+        console.log(result, "result from getActivitiesAPI");
+        return result;
+    }catch(error){
+        console.error(error);
+    }
+}
+
+export const createNewActivityAPI = async(token, name, description) => {
+    try{
+        const response = await fetch(`${BASE_URL}/activities`, {
+            method: "POST", 
+            headers: makeHeaders(token),
+            body: JSON.stringify({
+                name: name,
+                description: description
+            }),
+        });
+
+        const result = await response.json();
+
+        console.log(result, "result from createNew");
+        return result;
+    }catch(error){
+        console.error(error)
     }
 }

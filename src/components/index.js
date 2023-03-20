@@ -4,3 +4,6 @@ export { default as HomePage } from "./HomePage";
 export { default as LogIn } from "./LogIn";
 export { default as Register } from "./Register";
 export { default as ErrorMessage } from "./ErrorMessage";
+export { default as Routines } from "./Routines";
+export { default as Activities } from "./Activities";
+export { default as CreateActivity } from "./CreateActivity";

@@ -31,6 +31,7 @@ const Register = () => {
         <div>
             { message.length? <ErrorMessage message={message}/> : null }
             <h1>Register!</h1>
+            <h5>Please remember that your password must be at least 8 characters long!</h5>
             <form onSubmit={(e) => {
                 e.preventDefault();
                 if(password === confirmPass){
