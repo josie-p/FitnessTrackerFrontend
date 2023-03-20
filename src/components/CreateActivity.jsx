@@ -18,7 +18,7 @@ const newActivity = async(token, name, description) => {
         setActivities(newActivities);
         setTimeout(() => {
             navigate("/activities");
-        }, 4000);
+        }, 3000);
     }
 
 }
@@ -31,13 +31,13 @@ const newActivity = async(token, name, description) => {
                 newActivity(token, name, description);
             }}>
                 <label>Activity Name</label>
-                <input type="text" defaultValue="e.g. running, jumping" onInput={
+                <input type="text" placeholder="e.g. running, jumping" onInput={
                     (e) => {
                         setName(e.target.value);
                     }
                 }></input>
                 <label>Activity Description</label>
-                <textarea defaultValue="e.g. 'run for thirty minutes!'" onInput={
+                <textarea placeholder="e.g. 'run for thirty minutes!'" onInput={
                     (e) => {
                         setDescription(e.target.value);
                     }

@@ -84,3 +84,42 @@ export const createNewActivityAPI = async(token, name, description) => {
         console.error(error)
     }
 }
+
+export const getRoutinesAPI = async() =>{
+    try{
+        const response = await fetch(`${BASE_URL}/routines`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+            }
+        });
+
+        const result = await response.json();
+        
+        console.log(result, "result from getRoutinesAPI");
+        return result;
+    } catch(error){
+        console.error(error);
+    }
+}
+
+export const createNewRoutineAPI = async(token, name, goal, isPublic) =>{
+    try{
+        const response = await fetch(`${BASE_URL}/routines`, {
+            method: "POST",
+            headers: makeHeaders(token),
+            body: JSON.stringify({
+                name: name,
+                goal: goal,
+                isPublic: isPublic,
+            }),
+        });
+
+        const result = await response.json();
+
+        console.log(result, "result from createNewRoutineAPI");
+        return result;
+    } catch(error){
+        console.error(error);
+    }
+}

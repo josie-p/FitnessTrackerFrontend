@@ -7,3 +7,4 @@ export { default as ErrorMessage } from "./ErrorMessage";
 export { default as Routines } from "./Routines";
 export { default as Activities } from "./Activities";
 export { default as CreateActivity } from "./CreateActivity";
+export { default as CreateRoutine } from "./CreateRoutine";

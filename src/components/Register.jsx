@@ -47,12 +47,12 @@ const Register = () => {
                 }}></input>
 
                 <label>Password</label>
-                <input type="password" onInput={(e) => {
+                <input type="password" min ={"8"} required onInput={(e) => {
                     setPassword(e.target.value);
                 }}></input>
 
                 <label> Confirm Password </label>
-                <input type="password" onInput={(e) =>{
+                <input type="password" min={"8"} required onInput={(e) =>{
                     setConfirmPass(e.target.value);
                 }}></input>
 
