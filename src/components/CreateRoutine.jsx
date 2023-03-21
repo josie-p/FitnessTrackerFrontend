@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useOutletContext, useNavigate } from "react-router-dom";
 import { createNewRoutineAPI } from "../api-adapter";
-import { ErrorMessage } from "./ErrorMessage";
+import { ErrorMessage } from "./";
 
 const CreateRoutine = () =>{
     const [token, setToken, , , , , routines, setRoutines] = useOutletContext();
@@ -19,33 +19,20 @@ const CreateRoutine = () =>{
         console.log(response);
 
         if(response?.id){
-            // setTimeout(() => {
-            //     navigate("/routines");
-            // }, 2000);
-            // newRoutines.unshift(response);
-            // setNewRoutines(routines);
-            // newRoutines.unshift(response);
-            // setRoutines(newRoutines);
-
-
-            // console.log(routines, 'new routines array');
-
-            // newRoutines.unshift(response);
-            // setRoutines(newRoutines);
-
-            // navigate("/routines");
             const newRoutines = [...routines];
             newRoutines.unshift(response);
             setRoutines(newRoutines);
-            console.log(routines, 'new routines array');
 
             setTimeout(() => {
                 navigate("/routines");
             }, 3000);
-    }}
+    }else{
+        setMessage("Oh no! It seems there's been a mistake- there may be another routine by that name already. Try again!");
+    }
+}
     return(
         <div id="createRoutinePage">
-           {/* {console.log(isPublic, "before click")} */}
+           {message.length ? <ErrorMessage message={message} /> : null}
             <h1> This is create routine</h1>
             <form onSubmit={(e) => {
                 e.preventDefault();
