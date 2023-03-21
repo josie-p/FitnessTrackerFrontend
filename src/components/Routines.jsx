@@ -3,18 +3,19 @@ import { useOutletContext, Link } from "react-router-dom";
 
 const Routines = () => {
     const [token, setToken, loggedIn, setLoggedIn, , , routines, setRoutines] = useOutletContext();
+    console.log(routines, "routines from Routines page");
     return(
         <div id="routinesPage">
             {loggedIn ? <Link to="/new-routine">Create Routine!</Link> : null}
             <h1>Routines page!</h1>
-            { routines.map((routine, idx) =>{
+            { routines.length ?  routines.map((routine, idx) =>{
                 return(
                     <div id="routine-card" key={idx}>
                         <h4>{routine.creatorName}</h4>
                         <h3>{routine.name}</h3>
                         <p>{routine.goal}</p>
                         <div>
-                            {routine.activities.map((activity, idx)=>{
+                            { routine.activities?.length ? routine.activities.map((activity, idx)=>{
                                 return(
                                     <div key={idx} className="activity-card-onRoutine">
                                         <h5>{activity.name}</h5>
@@ -23,11 +24,11 @@ const Routines = () => {
                                         <p>x{activity.count}</p>
                                     </div>
                                 )
-                            })}
+                            }) : null}
                         </div>
                     </div>
                 )
-            })}
+            }) : <h1>LOADING...</h1>}
         </div>
     )
 }

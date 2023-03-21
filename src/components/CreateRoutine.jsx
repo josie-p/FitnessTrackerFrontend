@@ -1,27 +1,48 @@
 import React, { useState } from "react";
 import { useOutletContext, useNavigate } from "react-router-dom";
 import { createNewRoutineAPI } from "../api-adapter";
+import { ErrorMessage } from "./ErrorMessage";
 
 const CreateRoutine = () =>{
-    const [token, setToken, , , , ] = useOutletContext();
+    const [token, setToken, , , , , routines, setRoutines] = useOutletContext();
 
     const [name, setName] = useState("");
     const [goal, setGoal] = useState("");
     const [isPublic, setIsPublic] = useState(false);
+    // const [newRoutines, setNewRoutines] = useState([]);
+    const [message, setMessage] = useState("");
 
     const navigate = useNavigate();
 
-    const newRoutine = async (token, name, goal, isPublic) =>{
+    const newRoutine = async (token, name, goal, isPublic) => {
         const response = await createNewRoutineAPI(token, name, goal, isPublic);
         console.log(response);
 
         if(response?.id){
+            // setTimeout(() => {
+            //     navigate("/routines");
+            // }, 2000);
+            // newRoutines.unshift(response);
+            // setNewRoutines(routines);
+            // newRoutines.unshift(response);
+            // setRoutines(newRoutines);
+
+
+            // console.log(routines, 'new routines array');
+
+            // newRoutines.unshift(response);
+            // setRoutines(newRoutines);
+
+            // navigate("/routines");
+            const newRoutines = [...routines];
+            newRoutines.unshift(response);
+            setRoutines(newRoutines);
+            console.log(routines, 'new routines array');
+
             setTimeout(() => {
                 navigate("/routines");
             }, 3000);
-        }
-    }
-    
+    }}
     return(
         <div id="createRoutinePage">
            {/* {console.log(isPublic, "before click")} */}
@@ -40,20 +61,14 @@ const CreateRoutine = () =>{
                 }}></input>
                 <label> Public Routine? </label>
                 <input type="checkbox" value = {isPublic} id="isPublicCheckBox" onChange={(e)=>{
-                    // if(isPublic === false){
                         setIsPublic(!isPublic);
-                    // } 
-                    // else {
-                    //     setIsPublic(false);
-                    // }
-                    //     console.log(e.target.value, "e val");
                         console.log(isPublic, "after click");
-                    //     console.log(document.getElementById(isPublicCheckBox.checked))
                 }}></input>
                 <button type="submit">Create New Routine</button>
             </form>
         </div>
     )
 };
+
 
 export default CreateRoutine;

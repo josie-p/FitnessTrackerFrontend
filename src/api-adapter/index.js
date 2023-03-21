@@ -104,6 +104,9 @@ export const getRoutinesAPI = async() =>{
 }
 
 export const createNewRoutineAPI = async(token, name, goal, isPublic) =>{
+    console.log(token, "token", name, "name", "goal", goal, "isPublic", isPublic);
+   
+
     try{
         const response = await fetch(`${BASE_URL}/routines`, {
             method: "POST",
@@ -114,6 +117,7 @@ export const createNewRoutineAPI = async(token, name, goal, isPublic) =>{
                 isPublic: isPublic,
             }),
         });
+        console.log(response, "response");
 
         const result = await response.json();
 
