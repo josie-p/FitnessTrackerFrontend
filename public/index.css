@@ -51,7 +51,7 @@ body {
 }
 
 /* #routinesPage, */
- #activitiesPage, #createActivityPage, #createRoutinePage{
+ #activitiesPage, #createActivityPage, #createRoutinePage, #editRoutinePage{
     width: 100%;
     height: 100%;
     background-color: white;

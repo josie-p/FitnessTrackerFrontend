@@ -43,9 +43,9 @@ const CreateRoutine = () =>{
                     setName(e.target.value);
                 }}></input>
                 <label> Goal: </label>
-                <input type="text" placeholder="grow my quads to an incredible size" required onInput={(e)=> {
+                <textarea placeholder="grow my quads to an incredible size" required onInput={(e)=> {
                     setGoal(e.target.value);
-                }}></input>
+                }}></textarea>
                 <label> Public Routine? </label>
                 <input type="checkbox" value = {isPublic} id="isPublicCheckBox" onChange={(e)=>{
                         setIsPublic(!isPublic);

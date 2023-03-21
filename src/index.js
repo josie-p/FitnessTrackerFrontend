@@ -9,7 +9,9 @@ import {
     Activities, 
     CreateActivity, 
     CreateRoutine, 
-    MyRoutines } from "./components";
+    MyRoutines,
+    EditRoutine } from "./components";
+
 import { createBrowserRouter,
          RouterProvider,
          Route, createRoutesFromElements, } from "react-router-dom";
@@ -24,6 +26,7 @@ import { createBrowserRouter,
                 <Route path="/new-activity" element={<CreateActivity/>}></Route>
                 <Route path="/new-routine" element={<CreateRoutine/>} />
                 <Route path="/my-routines" element={<MyRoutines/>} />
+                <Route path="/edit/:id" element={<EditRoutine/>} />
             </Route>
         ))
 

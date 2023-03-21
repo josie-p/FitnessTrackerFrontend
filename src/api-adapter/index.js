@@ -163,3 +163,22 @@ export const attachActivityToRoutineAPI = async( routineId, activityId, count, d
     }
 
 }
+
+export const editRoutineAPI = async(routineId, token, name, goal) => {
+    console.log(routineId, "ROUTINE ID API", token, name, goal);
+    try{
+        const response = await fetch(`${BASE_URL}/routines/${routineId}`, {
+            method: "PATCH",
+            headers: makeHeaders(token),
+            body: JSON.stringify({
+                name: name,
+                goal: goal
+            }),
+        });
+        const result = await response.json();
+        console.log(result, "result from editRoutineAPI");
+        return result;
+    } catch(error){
+        console.error(error);
+    }
+}

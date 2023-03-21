@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useOutletContext } from "react-router-dom";
+import { useOutletContext, Link } from "react-router-dom";
 import {
   getRoutinesByUserAPI,
   attachActivityToRoutineAPI,
@@ -9,7 +9,7 @@ import { ErrorMessage } from "./";
 const MyRoutines = () => {
   const [routines, setRoutines] = useState([]);
   const [, , , , activities, setActivities, ,] = useOutletContext();
-  console.log(activities, "activities from my routines");
+//   console.log(activities, "activities from my routines");
   const [isSelected, setIsSelected] = useState(false);
   const [activityId, setActivityId] = useState();
   const [count, setCount] = useState();
@@ -33,18 +33,22 @@ const MyRoutines = () => {
     count,
     duration
   ) => {
-    const response = await attachActivityToRoutineAPI(
-      routineId,
-      activityId,
-      count,
-      duration
-    );
-    if (!response?.id) {
-      setMessage(
-        "Oh no! It looks like there's a problem- check whether already have that activity in your routine."
-      );
-      scrollTo(0, 0);
-    }
+        const response = await attachActivityToRoutineAPI(
+        routineId,
+        activityId,
+        count,
+        duration
+        );
+        if (!response?.id) {
+            setMessage(
+                "Oh no! It looks like there's a problem- check whether already have that activity in your routine."
+                );
+                scrollTo(0, 0);
+            }
+
+        setTimeout(()=>{
+            if(response.id){window.location.reload()}
+        }, 1000);
   };
 
   return (
@@ -130,7 +134,7 @@ const MyRoutines = () => {
                     })
                   : null}
               </div>
-              <button>edit routine</button>
+              <Link to={`/edit/${routine.id}`}>edit routine</Link>
             </div>
           );
         })
