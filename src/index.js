@@ -1,6 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { HomePage, Main, LogIn, Register, Routines, Activities, CreateActivity, CreateRoutine } from "./components";
+import { 
+    HomePage, 
+    Main, 
+    LogIn, 
+    Register, 
+    Routines, 
+    Activities, 
+    CreateActivity, 
+    CreateRoutine, 
+    MyRoutines } from "./components";
 import { createBrowserRouter,
          RouterProvider,
          Route, createRoutesFromElements, } from "react-router-dom";
@@ -14,6 +23,7 @@ import { createBrowserRouter,
                 <Route path="/activities" element={<Activities/>}></Route>
                 <Route path="/new-activity" element={<CreateActivity/>}></Route>
                 <Route path="/new-routine" element={<CreateRoutine/>} />
+                <Route path="/my-routines" element={<MyRoutines/>} />
             </Route>
         ))
 

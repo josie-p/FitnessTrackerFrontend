@@ -21,13 +21,16 @@ const Navbar = ({token, setToken, loggedIn, setLoggedIn}) => {
        
           { loggedIn ? <p onClick = { () => {setToken(""); 
           localStorage.setItem("token", "");
+          localStorage.setItem("username", "");
           setLoggedIn(false);  
           console.log("logged out!");
           }}>logout</p> : null}
-          
-      <span className="material-symbols-outlined">
-        skull
-      </span>
+
+        <span className="material-symbols-outlined" onClick = {() => {        //add some type of message telling user this is their "profile"
+          navigate("/my-routines");
+        }}>
+          skull
+        </span>
     </div>
     </div>
   );

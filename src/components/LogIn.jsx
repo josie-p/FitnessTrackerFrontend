@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useOutletContext, useNavigate } from "react-router-dom";
+import { useOutletContext, useNavigate, Link } from "react-router-dom";
 import { logInAPI } from "../api-adapter";
 import { ErrorMessage } from "./";
 
@@ -16,6 +16,7 @@ const LogIn = () => {
 
         if(response?.token){
             localStorage.setItem("token", response.token);
+            localStorage.setItem("username", response.user.username);
             setToken(response.token);
             setLoggedIn(true);
             navigate("/");
@@ -27,7 +28,7 @@ const LogIn = () => {
     return(
         <div>
             { message.length? <ErrorMessage message={message}/> : null }
-            <h1>Login!</h1>
+            <h1> Please Login to continue! </h1>
             <form onSubmit={(e) => {
                 e.preventDefault();
                 login(username, password);
@@ -42,7 +43,7 @@ const LogIn = () => {
                 }}></input>
                 <button type="submit">login</button>
                 <h4>Don't have an account?</h4>
-                <h5> Register Here </h5>
+                <Link to="/register"> Register Here </Link>
             </form>
         </div>
     )

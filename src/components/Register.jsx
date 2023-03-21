@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import { useOutletContext, useNavigate } from "react-router-dom";
+import { useOutletContext, useNavigate, Link } from "react-router-dom";
 import { ErrorMessage } from "./";
 import { registerAPI } from "../api-adapter";
 
@@ -18,10 +18,10 @@ const Register = () => {
         const response = await registerAPI(username, password);
 
         if(response?.token){
-            localStorage.setItem("token", response.token);
-            setToken(response.token);
-            setLoggedIn(true);
-            navigate("/");
+            // localStorage.setItem("fromRegister", "registered");
+            // setToken(response.token);
+            // setLoggedIn(true);
+            navigate("/login");
         } else {
             setMessage("Unable to Register - user may already exist.")
         }
@@ -59,7 +59,7 @@ const Register = () => {
                 <button type="submit">register</button>
 
                 <h4>Already have an account?</h4>
-                <h5> Login Here ! </h5>
+                <Link to="/login"> Login Here ! </Link>
             </form>
         </div>
     )

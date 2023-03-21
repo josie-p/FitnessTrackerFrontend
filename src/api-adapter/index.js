@@ -85,7 +85,7 @@ export const createNewActivityAPI = async(token, name, description) => {
     }
 }
 
-export const getRoutinesAPI = async() =>{
+export const getRoutinesAPI = async() => {
     try{
         const response = await fetch(`${BASE_URL}/routines`, {
             method: "GET",
@@ -97,6 +97,20 @@ export const getRoutinesAPI = async() =>{
         const result = await response.json();
         
         console.log(result, "result from getRoutinesAPI");
+        return result;
+    } catch(error){
+        console.error(error);
+    }
+}
+
+export const getRoutinesByUserAPI = async(token, username) => {
+    try{
+        const response = await fetch(`${BASE_URL}/users/${username}/routines`, {
+            method: "GET",
+            headers: makeHeaders(token),
+        });
+        const result = await response.json();
+        console.log(result, "result from routinesByUser");
         return result;
     } catch(error){
         console.error(error);
