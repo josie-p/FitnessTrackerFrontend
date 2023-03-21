@@ -141,3 +141,25 @@ export const createNewRoutineAPI = async(token, name, goal, isPublic) =>{
         console.error(error);
     }
 }
+
+export const attachActivityToRoutineAPI = async( routineId, activityId, count, duration) => {
+    try{
+            const response = await fetch(`${BASE_URL}/routines/${routineId}/activities`, {
+                method: "POST",
+                headers: {
+                    "Content-Type" : "application/json",
+                },
+                body: JSON.stringify({
+                    activityId: activityId, 
+                    count: count,
+                    duration: duration
+                })
+            });
+            const result = await response.json();
+            console.log(result, "result from attachACtivities");
+            return result;
+    }catch(error){
+        console.error(error);
+    }
+
+}
