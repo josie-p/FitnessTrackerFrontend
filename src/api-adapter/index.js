@@ -218,3 +218,18 @@ export const deleteActivityAPI = async(routineActivityId, token) => {
         console.error(error);
     }
 }
+
+export const deleteRoutineAPI = async(routineId, token) => {
+    try{
+        const response = await fetch(`${BASE_URL}/routines/${routineId}`, {
+            method: "DELETE",
+            headers: makeHeaders(token),
+        });
+
+        const result = await response.json();
+        console.log(result, "result from deleteRoutine API");
+        return result;
+    }catch(error){
+        console.error(error);
+    }
+}

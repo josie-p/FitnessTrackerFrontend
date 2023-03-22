@@ -4,7 +4,8 @@ import { useOutletContext, Link } from "react-router-dom";
 import {
     getRoutinesByUserAPI,
     attachActivityToRoutineAPI,
-    deleteActivityAPI
+    deleteActivityAPI,
+    deleteRoutineAPI
   } from "../api-adapter";
 
 const myRoutineCard = (props) => {
@@ -53,6 +54,23 @@ const myRoutineCard = (props) => {
             }, 500);
             
         } else {null}
+
+      }
+
+      const deleteRoutine = async(routineId, token) => {
+          if(confirm("are you sure you want to delete this routine- this action is permanent.")){
+            const response = await deleteRoutineAPI(routineId, token);
+          console.log(response, "response from delete routine helper");
+            if(response?.id){
+              setMessage("Oh no! Your delete wasn't completed- try again!");
+            }
+  
+            setTimeout(() => {
+              if(response?.id){window.location.reload()}
+            }, 500);
+          }else{
+            null;
+          }
 
       }
 
@@ -144,7 +162,10 @@ const myRoutineCard = (props) => {
                      setIsEdit(!isEdit);
                     }}>edit your activities </button>
                 <Link to={`/edit/${routine.id}`}><button>edit routine</button></Link>
-                <Link to={`/delete/${routine.id}`}><button>delete routine</button></Link>
+                <button onClick={(e) => {
+                  e.preventDefault();
+                  deleteRoutine(routine.id, localStorage.getItem("token"));
+                }}>delete routine</button>
             </div>
     )
 }
