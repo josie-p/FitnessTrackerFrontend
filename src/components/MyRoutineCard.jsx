@@ -4,6 +4,7 @@ import { useOutletContext, Link } from "react-router-dom";
 import {
     getRoutinesByUserAPI,
     attachActivityToRoutineAPI,
+    deleteActivityAPI
   } from "../api-adapter";
 
 const myRoutineCard = (props) => {
@@ -36,6 +37,24 @@ const myRoutineCard = (props) => {
                 if(response.id){window.location.reload()}
             }, 1000);
       };
+
+      const deleteActivity = async (routineActivityId, token) => {
+        if(confirm("are you sure?") === true){
+            const response = await deleteActivityAPI(routineActivityId, token);
+            console.log(response, "response from deleteActivity Helper Func");
+            if(!response?.id){
+                setMessage(
+                    "Delete failed complete- try again later!"
+                );
+            }
+
+            setTimeout(()=>{
+                if(response.id){window.location.reload()}
+            }, 500);
+            
+        } else {null}
+
+      }
 
     return(
         <div id="routine-card">
@@ -110,12 +129,16 @@ const myRoutineCard = (props) => {
                           <p>{activity.duration} minutes</p>
                           <p>x{activity.count}</p>
                          { isEdit ? <EditActivity count={activity.count} duration={activity.duration} routineActivityId={activity.routineActivityId}/> : null }
-                          <button>delete activity</button>
+                          <button onClick= {(e)=>{
+                            e.preventDefault();
+                            deleteActivity(activity.routineActivityId, localStorage.getItem("token"));
+                            }}>delete activity</button>
                         </div>
                       );
                     })
                     : null}
               </div>
+              
                 <button onClick={(e) => {
                      e.preventDefault();
                      setIsEdit(!isEdit);

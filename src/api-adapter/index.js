@@ -205,11 +205,15 @@ export const editActivityAPI = async(routineActivityId, token, count, duration) 
     }
 }
 
-export const deleteActivityAPI = async(routineActivityId) => {
+export const deleteActivityAPI = async(routineActivityId, token) => {
     try{
         const response = await fetch(`${BASE_URL}/routine_activities/${routineActivityId}`, {
-            method: ""
-        })
+            method: "DELETE",
+            headers: makeHeaders(token)
+        });
+        const result = await response.json();
+        console.log(result, "result from deleteActivityAPI")
+        return result;
     }catch(error){
         console.error(error);
     }

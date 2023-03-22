@@ -25,6 +25,7 @@ const MyRoutines = () => {
     <div>
       <h1>{`Welcome ${localStorage.getItem("username")}!`}</h1>
       <h2> your routines: </h2>
+      <Link to="/new-routine"><button>Create a new Routine</button></Link>
       {routines.length ? (
         routines.map((routine, idx) => {
           return (
