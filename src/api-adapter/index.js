@@ -1,4 +1,5 @@
 const BASE_URL = "https://fitness-tracker-api-iv35.onrender.com/api";
+// const BASE_URL = "http://localhost:3000/api";
 
 function makeHeaders (token){
     return {
@@ -105,6 +106,7 @@ export const getRoutinesAPI = async() => {
 
 export const getRoutinesByUserAPI = async(token, username) => {
     try{
+        console.log("token", token, "username", username);
         const response = await fetch(`${BASE_URL}/users/${username}/routines`, {
             method: "GET",
             headers: makeHeaders(token),
