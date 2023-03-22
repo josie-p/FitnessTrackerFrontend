@@ -57,7 +57,7 @@ body {
     background-color: white;
 }
 
-#routine-card, .public-user-routines {
+#routine-card, .public-user-routines, .public-routine-activities {
     border: 1px solid black;
     padding: 1rem;
     margin: 2rem;

@@ -12,7 +12,9 @@ import {
     MyRoutines,
     EditRoutine,
     EditActivity, 
-    PublicUserRoutines} from "./components";
+    PublicUserRoutines,
+    PublicRoutinesByActivity,
+} from "./components";
 
 import { createBrowserRouter,
          RouterProvider,
@@ -30,6 +32,7 @@ import { createBrowserRouter,
                 <Route path="/my-routines" element={<MyRoutines/>} />
                 <Route path="/edit/:id" element={<EditRoutine/>} />
                 <Route path="/:username/routines" element={<PublicUserRoutines/>} />
+                <Route path="/routines/:id" element={<PublicRoutinesByActivity/>} />
             </Route>
         ))
 

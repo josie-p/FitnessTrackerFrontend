@@ -13,3 +13,4 @@ export { default as MyRoutineCard } from "./MyRoutineCard";
 export { default as EditRoutine } from "./EditRoutine";
 export { default as EditActivity } from "./EditActivity";
 export { default as PublicUserRoutines } from "./PublicUserRoutines";
+export { default as PublicRoutinesByActivity } from "./PublicRoutinesByActivity"

@@ -23,8 +23,8 @@ const PublicUserRoutines = () => {
                 publicRoutines.map((routine, idx) => {
                     return(
                         <div className="public-user-routines" key={idx}>
-                            <h5>{routine.creatorName}</h5>
-                            <h6>{routine.name}</h6>
+                            <h4>{routine.creatorName}</h4>
+                            <h5>{routine.name}</h5>
                             <p>{routine.goal}</p>
                             {
                                 routine.activities?.length ? 
@@ -33,8 +33,8 @@ const PublicUserRoutines = () => {
                                         <div key={idx}>
                                             <p>{activity.name}</p>
                                             <p>{activity.description}</p>
-                                            <p>{activity.count}</p>
-                                            <p>{activity.duration}</p>
+                                            <p>x{activity.count}</p>
+                                            <p>{activity.duration} mins</p>
                                         </div>
                                     )
                                 })

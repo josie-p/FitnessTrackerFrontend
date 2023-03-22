@@ -24,7 +24,7 @@ const Activities = () => {
                 activities.map((activity, idx) => {
                     return(
                         <div id="activity-card" key={`the unique key for this card is ${idx}`}>
-                             <h3>{activity.name}</h3>
+                             <Link to={`/routines/${activity.id}`}><h3>{activity.name}</h3></Link>
                              <p>{activity.description}</p>
                         </div>
                     )

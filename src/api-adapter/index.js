@@ -251,3 +251,20 @@ export const  getPublicUserRoutinesAPI = async(username, token) => {
         console.error(error);
     }
 }
+
+export const getPublicRoutinesByActivityAPI = async(activityId) => {
+    try{
+        const response  = await fetch(`${BASE_URL}/activities/${activityId}/routines`, {
+            method: "GET",
+            headers: {
+                "Content-Type" : "application/json",
+            },
+        });
+
+        const result = await response.json();
+        console.log(result, "result from get public routines by activity");
+        return result;
+    }catch(error){
+        console.error(error);
+    }
+}

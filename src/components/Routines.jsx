@@ -18,7 +18,7 @@ const Routines = () => {
                             { routine.activities?.length ? routine.activities.map((activity, idx)=>{
                                 return(
                                     <div key={idx} className="activity-card-onRoutine">
-                                        <h5>{activity.name}</h5>
+                                        <Link to={`/routines/${activity.id}`}><h5>{activity.name}</h5></Link>
                                         <p>{activity.description}</p>
                                         <p>{activity.duration} minutes</p>
                                         <p>x{activity.count}</p>
