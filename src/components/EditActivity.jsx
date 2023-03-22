@@ -14,8 +14,12 @@ const editActivityFrontEnd = async() => {
 
     return(
         <div>
-            <form onSubmit={(e) => {e.preventDefault();
-                                    editActivityFrontEnd();
+            <form onSubmit={(e) => {
+                e.preventDefault();
+                editActivityFrontEnd();
+                setTimeout(()=> {
+                    window.location.reload();
+                }, 500);
             }}>
             <label>duration:</label>
                 <input type="number" defaultValue={duration} onChange={(e) => {
