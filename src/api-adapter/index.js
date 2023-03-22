@@ -184,3 +184,33 @@ export const editRoutineAPI = async(routineId, token, name, goal) => {
         console.error(error);
     }
 }
+
+export const editActivityAPI = async(routineActivityId, token, count, duration) => {
+    try{
+        const response = await fetch(`${BASE_URL}/routine_activities/${routineActivityId}`, {
+            method: 'PATCH',
+            headers: makeHeaders(token),
+            body: JSON.stringify({
+                count: count,
+                duration: duration
+            }),
+        });
+
+        const result = await response.json();
+
+        console.log(result, "result from edit activity api");
+        return result;
+    }catch(error){
+        console.error(error)
+    }
+}
+
+export const deleteActivityAPI = async(routineActivityId) => {
+    try{
+        const response = await fetch(`${BASE_URL}/routine_activities/${routineActivityId}`, {
+            method: ""
+        })
+    }catch(error){
+        console.error(error);
+    }
+}

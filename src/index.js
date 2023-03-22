@@ -10,7 +10,8 @@ import {
     CreateActivity, 
     CreateRoutine, 
     MyRoutines,
-    EditRoutine } from "./components";
+    EditRoutine,
+    EditActivity } from "./components";
 
 import { createBrowserRouter,
          RouterProvider,

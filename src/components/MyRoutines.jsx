@@ -4,7 +4,7 @@ import {
   getRoutinesByUserAPI,
   attachActivityToRoutineAPI,
 } from "../api-adapter";
-import { ErrorMessage } from "./";
+import { EditActivity, ErrorMessage } from "./";
 
 const MyRoutines = () => {
   const [routines, setRoutines] = useState([]);
@@ -17,6 +17,7 @@ const MyRoutines = () => {
   const [message, setMessage] = useState("");
   const token = window.localStorage.getItem("token");
   const username = window.localStorage.getItem("username");
+  const [isEdit, setIsEdit] = useState(false);
 
   const getRoutinesByUser = async () => {
     const response = await getRoutinesByUserAPI(token, username);
@@ -26,6 +27,12 @@ const MyRoutines = () => {
   useEffect(() => {
     getRoutinesByUser();
   }, []);
+
+  const showEdit = () => {
+    return(
+      <EditActivity count={activity.count} duration={activity.duration} routineActivityId={activity.routineActivityId}/>
+    )
+  }
 
   const attachActivityToRoutine = async (
     routineId,
@@ -127,7 +134,17 @@ const MyRoutines = () => {
                           <p>{activity.description}</p>
                           <p>{activity.duration} minutes</p>
                           <p>x{activity.count}</p>
-                          <button>edit activity</button>
+                         <button onClick={(e) => {
+                          e.preventDefault();
+                          // console.log(e.target.value, "target");
+                          // setIsEdit(!isEdit);
+                          // return(
+                          //   <EditActivity count={activity.count} duration={activity.duration} routineActivityId={activity.routineActivityId}/>
+                          // )
+                           
+                          // id=`${activity.name}`
+                         }}>edit activity {activity.name}</button>
+                         {/* { isEdit &&  document.getElementById(`${activity.name}`).value.includes(`${activity.name}`) ? <EditActivity count={activity.count} duration={activity.duration} routineActivityId={activity.routineActivityId}/> : null } */}
                           <button>delete activity</button>
                         </div>
                       );
@@ -135,6 +152,7 @@ const MyRoutines = () => {
                   : null}
               </div>
               <Link to={`/edit/${routine.id}`}>edit routine</Link>
+              <Link to={`/delete/${routine.id}`}>delete routine</Link>
             </div>
           );
         })

@@ -6,7 +6,7 @@ const Routines = () => {
     console.log(routines, "routines from Routines page");
     return(
         <div id="routinesPage">
-            {loggedIn ? <Link to="/new-routine">Create Routine!</Link> : null}
+            {loggedIn ? <div><Link to="/my-routines">See your routines!</Link> <Link to="/new-routine">Create Routine!</Link></div> : null}
             <h1>Routines page!</h1>
             { routines.length ?  routines.map((routine, idx) =>{
                 return(
