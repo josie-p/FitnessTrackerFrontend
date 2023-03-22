@@ -233,3 +233,21 @@ export const deleteRoutineAPI = async(routineId, token) => {
         console.error(error);
     }
 }
+
+//stretch  goals!
+export const  getPublicUserRoutinesAPI = async(username, token) => {
+    try{
+
+        const response = await fetch(`${BASE_URL}/users/${username}/routines`, {
+            method: "GET",
+            headers: makeHeaders(token),
+        });
+
+        const result = await response.json();
+        console.log(result, "result from get public user routines api");
+
+        return result;
+    }catch(error){
+        console.error(error);
+    }
+}

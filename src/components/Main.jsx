@@ -22,7 +22,14 @@ const Main = () => {
 
     const getRoutines = async() => {
         const response = await getRoutinesAPI();
-        setRoutines(response);
+        const filterRoutines = response.filter((e, idx) => {
+            if(e.isPublic){
+                return true;
+            }else{
+                return false;
+            }
+        })
+        setRoutines(filterRoutines);
         console.log(response, "response from get routines");
     }
     useEffect(()=>{

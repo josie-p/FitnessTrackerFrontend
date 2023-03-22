@@ -11,7 +11,7 @@ const Routines = () => {
             { routines.length ?  routines.map((routine, idx) =>{
                 return(
                     <div id="routine-card" key={idx}>
-                        <h4>{routine.creatorName}</h4>
+                        <Link to={`/${routine.creatorName}/routines`}><h4>{routine.creatorName}</h4></Link>
                         <h3>{routine.name}</h3>
                         <p>{routine.goal}</p>
                         <div>
