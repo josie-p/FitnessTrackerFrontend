@@ -1,4 +1,5 @@
-const BASE_URL = "https://fitness-tracker-api-iv35.onrender.com/api";
+// const BASE_URL = "https://fitness-tracker-api-iv35.onrender.com/api";
+const BASE_URL = "https://fitnesstrac-kr.herokuapp.com/api";
 // const BASE_URL = "http://localhost:3000/api";
 
 function makeHeaders (token){
@@ -20,7 +21,6 @@ export const logInAPI = async(username, password) => {
                 password: password,
             })
         });
-
         const result = await response.json();
         console.log(result, "result from api");
         return result;

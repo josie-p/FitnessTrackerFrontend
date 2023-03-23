@@ -20,7 +20,9 @@ const LogIn = () => {
             setToken(response.token);
             setLoggedIn(true);
             navigate("/");
-        }else{
+        }
+        if(!response?.token){
+            console.log("reaching this??")
             setMessage("You have entered the wrong username/password- try again later!");
         }
     }

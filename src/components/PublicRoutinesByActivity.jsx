@@ -9,7 +9,7 @@ const PublicRoutinesByActivity = () => {
 
     const getPublicRoutinesByActivity = async(activityId) => {
         const response = await getPublicRoutinesByActivityAPI(activityId);
-        if(!response?.id){
+        if(!response){
             setTimeout(()=>{
                 console.log("are we getting here");
                 document.getElementById("timeout").style.display="flex";
