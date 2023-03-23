@@ -106,14 +106,37 @@ const myRoutineCard = (props) => {
                   <option value="addactivity">add an activity</option>
                   {activities.length
                     ? activities.map((activity, idx) => {
-                        return (
-                          <option
-                            value={activity.id}
-                            key={`the unique key is ${idx}`}
-                          >
-                            {activity.name}
-                          </option>
-                        );
+                      let routineArr = [...routine.activities];
+
+                      let nameArr = [];
+                      for(let i = 0; i < routineArr.length; i++){
+                        nameArr[i] = routineArr[i].name;
+                      }
+
+                      console.log(nameArr, "nameArr");
+
+                      let exists = nameArr.includes(activity.name);
+                      
+                     if(!exists){
+                      return (
+                        <option
+                          value={activity.id}
+                          key={`the unique key is ${idx}`}
+                        >
+                          {activity.name}
+                        </option>
+                      );
+                     }else{
+                      return null;
+                     }
+                        // return (
+                        //   <option
+                        //     value={activity.id}
+                        //     key={`the unique key is ${idx}`}
+                        //   >
+                        //     {activity.name}
+                        //   </option>
+                        // );
                       })
                     : null}
                 </select>
