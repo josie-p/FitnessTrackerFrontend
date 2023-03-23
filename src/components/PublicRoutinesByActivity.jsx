@@ -9,6 +9,12 @@ const PublicRoutinesByActivity = () => {
 
     const getPublicRoutinesByActivity = async(activityId) => {
         const response = await getPublicRoutinesByActivityAPI(activityId);
+        if(!response?.id){
+            setTimeout(()=>{
+                console.log("are we getting here");
+                document.getElementById("timeout").style.display="flex";
+            }, 5000)
+        }
         console.log(response, "public routines activities");
         setPublicRoutines(response);
     }
@@ -21,6 +27,9 @@ const PublicRoutinesByActivity = () => {
     return(
         <div>
             <h1>public routines by activity</h1>
+            <div id="timeout">
+                <h1> nothing found, please try reloading your page ! </h1>
+            </div>
             {
                 publicRoutines?.length ? 
                 publicRoutines.map((routine, idx) => {
@@ -47,7 +56,7 @@ const PublicRoutinesByActivity = () => {
                         </div>
                     )
                 })
-                : null
+                : <h1> LOADING... </h1>
             }
         </div>
     )

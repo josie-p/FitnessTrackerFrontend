@@ -19,7 +19,7 @@ const PublicUserRoutines = () => {
     return(
         <div>
             <h1>{username}'s routines!</h1>
-            {
+            {publicRoutines?.length ?
                 publicRoutines.map((routine, idx) => {
                     return(
                         <div className="public-user-routines" key={idx}>
@@ -43,7 +43,7 @@ const PublicUserRoutines = () => {
                         </div>
                     )
                 })
-            }
+            : <h1>LOADING...</h1>}
         </div>
     )
 }
