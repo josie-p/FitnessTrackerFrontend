@@ -8,6 +8,7 @@ const EditRoutine = () => {
 
     const [name, setName] = useState("name");
     const [goal, setGoal] = useState("goal");
+    const [isPublic, setIsPublic] = useState(false);
 
     const navigate = useNavigate();
 
@@ -17,7 +18,7 @@ const EditRoutine = () => {
 console.log(token, "TOKEN");
     const editRoutine = async () =>{
         console.log(name, goal);
-        const response = await editRoutineAPI(id, token, name, goal);
+        const response = await editRoutineAPI(id, token, name, goal, isPublic);
         console.log(response, "response from helper editRoutine");
         setTimeout(() => {
             navigate("/my-routines");
@@ -41,6 +42,7 @@ if(routines.length){
     console.log(currentRoutine, "currentRoutine");
     setGoal(currentRoutine.goal);
     setName(currentRoutine.name);
+    setIsPublic(currentRoutine.isPublic);
 }
 
 
@@ -64,6 +66,8 @@ if(routines.length){
                 <input type="text" value={name} onChange = {(e)=>{setName(e.target.value)}}></input>
                 <label>Goal:</label>
                 <textarea value={goal} onChange ={(e)=>{setGoal(e.target.value)}}></textarea>
+                <label>Public?</label>
+                <input type="checkbox" onChange={(e) => { setIsPublic(!isPublic) }}></input>
                 <button type="submit">submit</button>
             </form>
            : <h1> LOADING ... </h1> }

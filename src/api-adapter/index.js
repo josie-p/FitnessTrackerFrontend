@@ -166,7 +166,7 @@ export const attachActivityToRoutineAPI = async( routineId, activityId, count, d
 
 }
 
-export const editRoutineAPI = async(routineId, token, name, goal) => {
+export const editRoutineAPI = async(routineId, token, name, goal, isPublic) => {
     console.log(routineId, "ROUTINE ID API", token, name, goal);
     try{
         const response = await fetch(`${BASE_URL}/routines/${routineId}`, {
@@ -174,7 +174,8 @@ export const editRoutineAPI = async(routineId, token, name, goal) => {
             headers: makeHeaders(token),
             body: JSON.stringify({
                 name: name,
-                goal: goal
+                goal: goal, 
+                isPublic : isPublic
             }),
         });
         const result = await response.json();

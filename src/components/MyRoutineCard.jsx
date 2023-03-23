@@ -113,8 +113,6 @@ const myRoutineCard = (props) => {
                         nameArr[i] = routineArr[i].name;
                       }
 
-                      console.log(nameArr, "nameArr");
-
                       let exists = nameArr.includes(activity.name);
                       
                      if(!exists){
