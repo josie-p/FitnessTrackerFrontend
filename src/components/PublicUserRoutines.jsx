@@ -17,24 +17,24 @@ const PublicUserRoutines = () => {
     }, [])
 
     return(
-        <div>
+        <div id="publicRoutinesByUserPage">
             <h1>{username}'s routines!</h1>
             {publicRoutines?.length ?
                 publicRoutines.map((routine, idx) => {
                     return(
-                        <div className="public-user-routines" key={idx}>
-                            <h4>{routine.creatorName}</h4>
+                        <div className="public-routine-cards" key={idx}>
+                            <h4 className="publicRoutinesCreatorName"><span className="beforeContent">from: </span>{routine.creatorName}</h4>
                             <h5>{routine.name}</h5>
                             <p>{routine.goal}</p>
                             {
                                 routine.activities?.length ? 
                                 routine.activities.map((activity, idx) => {
                                     return(
-                                        <div key={idx}>
-                                            <p>{activity.name}</p>
+                                        <div key={idx} className="activity-card-onPublicRoutine">
+                                            <p className="publicRoutinesActivityName">{activity.name}</p>
                                             <p>{activity.description}</p>
-                                            <p>x{activity.count}</p>
                                             <p>{activity.duration} mins</p>
+                                            <p>x{activity.count}</p>
                                         </div>
                                     )
                                 })
