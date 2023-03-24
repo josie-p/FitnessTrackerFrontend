@@ -1,7 +1,10 @@
 import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import MirrorLogo from "./images/mirrorTang.png";
 
 const HomePage = () => {
+  const navigate = useNavigate();
+
   const routinesMessage = () => {
     setTimeout(() => {
       document.getElementById("myRoutinesMessage").style.display = "none";
@@ -63,12 +66,18 @@ const HomePage = () => {
           </div>
           <h1>start your fitness journey with tangerine today!!!</h1>
           <div id="holdHomeButtons">
-            <button className="homePageButtons">Sign Up!</button>
-            <button className="homePageButtons"> Sign In</button>
+            <button className="homePageButtons" onClick={()=>{
+              navigate("/register")
+            }}>Sign Up!</button>
+            <button className="homePageButtons" onClick={()=>{
+              navigate("/login")
+            }}> Sign In</button>
           </div>
           <div id="checkRoutines">
           <h3> Check out our most popular routines :</h3>
-          <button id="routinesButton">Routines</button>
+          <button id="routinesButton" onClick={()=>{
+            navigate("/routines")
+          }}>Routines</button>
           </div>
         </div>
       </div>

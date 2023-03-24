@@ -21,15 +21,15 @@ const editActivityFrontEnd = async() => {
                     window.location.reload();
                 }, 500);
             }}>
-            <label>duration:</label>
-                <input type="number" defaultValue={duration} onChange={(e) => {
+            <label className="addActivityLabels">duration: </label>
+                <input className="addActivityInputs" type="number" defaultValue={duration} onChange={(e) => {
                     setNewDuration(e.target.value)
                 }}></input>
-                <label>count:</label>
-                <input type="number" defaultValue={count} onChange={(e) => {
+                <label className="addActivityLabels">count: </label>
+                <input className="addActivityInputs" type="number" defaultValue={count} onChange={(e) => {
                     setNewCount(e.target.value);
                 }}></input>
-                <button type="submit"> change</button>
+                <button className="myRoutinesButtons" type="submit"> change</button>
             </form>
 
         </div>
