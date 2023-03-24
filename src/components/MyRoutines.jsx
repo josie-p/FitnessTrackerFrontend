@@ -22,19 +22,21 @@ const MyRoutines = () => {
   }, []);
   
   return (
-    <div>
-      <h1>{`Welcome ${localStorage.getItem("username")}!`}</h1>
-      <h2> your routines: </h2>
-      <Link to="/new-routine"><button>Create a new Routine</button></Link>
-      {routines.length ? (
-        routines.map((routine, idx) => {
-          return (
-            <MyRoutineCard routine={routine} key={idx} />
-            );
-          })
-          ) : (
-            <h1>LOADING...</h1>
-            )}
+    <div id="myRoutinesContainer">
+      <h1 id="welcomeMyRoutines">{`Hi ${localStorage.getItem("username")}!`} <Link to="/new-routine"><button id="myRoutinesCreateNewButton">Create a new Routine</button></Link> </h1>
+        
+      <div id="yourRoutinesHolder">
+        <h2> your routines: </h2>
+        {routines.length ? (
+          routines.map((routine, idx) => {
+            return (
+              <MyRoutineCard routine={routine} key={idx} />
+              );
+            })
+            ) : (
+              <h1>LOADING...</h1>
+              )}
+        </div>
     </div>
   );
 };

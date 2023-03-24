@@ -79,9 +79,9 @@ const myRoutineCard = (props) => {
 
             {message.length ? <ErrorMessage message={message} /> : null}
 
-              <h4>{routine.creatorName}</h4>
-              <h3>{routine.name}</h3>
-              <p>{routine.goal}</p>
+              {/* <h4>{routine.creatorName}</h4> */}
+              <h3 className="beforeContent title">{routine.name}</h3>
+              <p><span className="beforeContent">Goal: </span>{routine.goal}</p>
               <form
                 onSubmit={(e) => {
                   e.preventDefault();
@@ -94,7 +94,7 @@ const myRoutineCard = (props) => {
                   );
                 }}
               >
-                <label htmlFor="add-activity">add activity to routine</label>
+                <label htmlFor="add-activity" className="addActivityLabel">add activity to routine:</label>
                 <select
                   name="add-activity"
                   id="add-activity"
@@ -140,15 +140,17 @@ const myRoutineCard = (props) => {
                 </select>
                 {isSelected ? (
                   <div>
-                    <label>count: </label>
+                    <label className="addActivityLabels">count: </label>
                     <input
+                      className="addActivityInputs"
                       type="number"
                       onChange={(e) => {
                         setCount(e.target.value);
                       }}
                     ></input>
-                    <label>duration: </label>
+                    <label className="addActivityLabels">duration: </label>
                     <input
+                      className="addActivityInputs"
                       type="number"
                       onChange={(e) => {
                         setDuration(e.target.value);
@@ -156,19 +158,19 @@ const myRoutineCard = (props) => {
                     ></input>
                   </div>
                 ) : null}
-                <button>submit</button>
+                <button className="myRoutinesButtons">add activity</button>
               </form>
               <div>
                 {routine.activities?.length
                   ? routine.activities.map((activity, idx) => {
                       return (
                         <div key={idx} className="activity-card-onRoutine">
-                          <h5>{activity.name}</h5>
-                          <p>{activity.description}</p>
-                          <p>{activity.duration} minutes</p>
-                          <p>x{activity.count}</p>
+                          <h5 className="activityOnMyRoutinesName">{activity.name}</h5>
+                          <p><span className="beforeContent">Description: </span>{activity.description}</p>
+                          <p><span className="beforeContent">Duration: </span>{activity.duration} minutes</p>
+                          <p><span className="beforeContent">Count: </span>x{activity.count}</p>
                          { isEdit ? <EditActivity count={activity.count} duration={activity.duration} routineActivityId={activity.routineActivityId}/> : null }
-                          <button onClick= {(e)=>{
+                          <button className="myRoutinesButtons" onClick= {(e)=>{
                             e.preventDefault();
                             deleteActivity(activity.routineActivityId, localStorage.getItem("token"));
                             }}>delete activity</button>
@@ -178,12 +180,14 @@ const myRoutineCard = (props) => {
                     : null}
               </div>
               
-                <button onClick={(e) => {
+                <button className="myRoutinesButtons"
+                onClick={(e) => {
                      e.preventDefault();
                      setIsEdit(!isEdit);
                     }}>edit your activities </button>
-                <Link to={`/edit/${routine.id}`}><button>edit routine</button></Link>
-                <button onClick={(e) => {
+                <Link to={`/edit/${routine.id}`}><button className="myRoutinesButtons">edit routine</button></Link>
+                <button className="myRoutinesButtons"
+                onClick={(e) => {
                   e.preventDefault();
                   deleteRoutine(routine.id, localStorage.getItem("token"));
                 }}>delete routine</button>

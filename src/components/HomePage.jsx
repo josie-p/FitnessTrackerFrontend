@@ -14,9 +14,11 @@ const HomePage = () => {
 
   return (
     <div id="homePage">
+      {localStorage.getItem("token").length ? 
       <span id="myRoutinesMessage">
         click on the skull to see your routines!
-      </span>
+      </span> : null
+      }
       <div id="topHomePage">
         {/* <h1>tangerine</h1> */}
         <div id="welcomeHomeText">
@@ -30,10 +32,6 @@ const HomePage = () => {
         </h3>
       </div>
       <div id="holdHomeContent">
-        {/* <div id="leftHomePage"> */}
-          {/* <h2>Welcome Home!</h2> */}
-          {/* fill up whole side ? big text gradient ? */}
-        {/* </div> */}
         <div id="rightHomePage">
           <h3>hear from other users!</h3>
           <div id="reviews">
