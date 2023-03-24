@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import MirrorLogo from "./images/mirrorTang.png";
 
 const HomePage = () => {
   const routinesMessage = () => {
@@ -18,7 +19,11 @@ const HomePage = () => {
       </span>
       <div id="topHomePage">
         {/* <h1>tangerine</h1> */}
-        <h2>Welcome Home!</h2>
+        <div id="welcomeHomeText">
+          
+          <h2><img className="logo" src="https://cdn-icons-png.flaticon.com/512/1332/1332399.png"/>Welcome Home!<img className="logo" src= {MirrorLogo}/></h2>
+          
+        </div>
         <h3>
           {" "}
           Tangerine is the worlds most promising upcoming fitness tracker*{" "}
@@ -69,7 +74,7 @@ const HomePage = () => {
           </div>
         </div>
       </div>
-      <h6>*it's not</h6>
+      <h6 className="itsNot">*it's not</h6>
     </div>
   );
 };

@@ -21,13 +21,14 @@ body {
 
 #navbar {
     background-color: #F25C54;
-    color: white;
+    color: #FEF5EC;
     display: flex;
     align-items: center;
     flex-grow: 1;
     justify-content: space-between;
     max-height: 10%;
     min-height: 40px;
+    font-size: 18pt;
     /* margin-bottom: 5px; */
     /* border-bottom: 5px dashed #F7B267; */
 }
@@ -42,7 +43,7 @@ body {
 #navLinks button{
     background-color: #F7B267;
     height: 30px;
-    width: 70px;
+    width: fit-content;
     border: none;
     border-radius: 35px;
     font-family: 'Righteous', sans-serif;
@@ -50,6 +51,9 @@ body {
     box-shadow: 2px 2px 3px white;
     transition: ease-in;
     transition-duration: 0.3s;
+    font-size: 15pt;
+    padding-right: 8px;
+    padding-left: 8px;
 }
 
 #navLinks button:hover{
@@ -99,7 +103,9 @@ body {
 
 .tangerineIcon {
     height: 40px;
-    margin: 10px;
+    margin: auto;
+    padding-right: 8px;
+    padding-left: 5px;
 }
 
 /* #routinesPage, */
@@ -117,7 +123,7 @@ body {
 }
 
 #myRoutinesMessage{
-    background-color: white;
+    background-color: #FEF5EC;
     padding: 10px;
     font-family: 'Comfortaa', sans-serif;
     position:fixed;
@@ -136,7 +142,7 @@ body {
 
 /* home page */
 #homePage{
-    background-color: white;
+    background-color: #FEF5EC;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -160,10 +166,20 @@ body {
     font-family: 'Monoton', sans-serif;
     color: #F27059;
     letter-spacing: 2px;
+    width: fit-content;
 }
 
 #topHomePage h3{
     font-size: 25pt;
+}
+#WelcomeHomeText{
+    overflow: auto;
+    
+}
+.logo{
+    height: 70px;
+    margin-right: 5px;
+    margin-left: 5px;
 }
 
 #leftHomePage{
@@ -270,4 +286,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+.itsNot{
+    color:#F4845F;
 }
