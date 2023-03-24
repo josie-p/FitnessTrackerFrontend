@@ -17,7 +17,7 @@ const HomePage = () => {
 
   return (
     <div id="homePage">
-      {localStorage.getItem("token").length ? 
+      {localStorage.getItem("token")?.length ? 
       <span id="myRoutinesMessage">
         click on the skull to see your routines!
       </span> : null

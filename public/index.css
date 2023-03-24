@@ -200,17 +200,18 @@ body {
     text-align: right;
     margin-right: 10px;
     color: #F27059;
-    /* border-bottom: 10px dashed #F4845F; */
+    border-bottom: 2px solid #F25C54;
+    padding: 10px;
+    transition: ease-in;
+    transition-duration: 0.3s;
 }
 
 #routinesPageCreatorName:hover{
-    /* border-bottom: 3px solid #F25C54; */
-    /* color: hotpink; */
-    /* text-decoration:  2px underline #F25C54; */
-    animation: shakeX;
-    animation-duration: 5s;
-    /* transition: ease-in;
-    transition-duration: 0.3s; */
+    border-bottom: 4px solid #F25C54;
+    animation: pulse;
+    animation-duration: 1s;
+    transition: ease-in;
+    transition-duration: 0.3s;
 }
 
 .activity-card-onRoutine{
@@ -220,8 +221,21 @@ body {
 }
 
 .activityOnRoutineName{
-    /* font-weight: 700; */
+    border-bottom: 5px dotted #F4845F;
+    margin-right: 5px;
+    margin-left: 5px;
     font-size: 15pt;
+    padding-bottom: 10px;
+    transition: ease;
+    transition-duration: 0.3s;
+}
+
+.activityOnRoutineName:hover{
+    border-bottom: 6px solid #F27059;
+    animation: pulse;
+    animation-duration: 1s;
+    transition: ease;
+    transition-duration: 0.3s;
 }
 
 
@@ -484,11 +498,15 @@ body {
     color: #FEF5EC;
     font-family: "Righteous", sans-serif;
     margin: 10px;
+    transition: ease-in;
+    transition-duration: 0.3s;
 }
 .myRoutinesButtons:hover{
     background-color: #F25C54;
     color: #ffdeba;
     box-shadow: 4px 4px 5px #F7B267;
+    transition: ease-in;
+    transition-duration: 0.3s;
 }
 .activityOnMyRoutinesName{
     color: #F27059;
