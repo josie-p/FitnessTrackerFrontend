@@ -6,22 +6,22 @@ const Routines = () => {
     console.log(routines, "routines from Routines page");
     return(
         <div id="routinesPage">
-            {loggedIn ? <div><Link to="/my-routines">See your routines!</Link> <Link to="/new-routine">Create Routine!</Link></div> : null}
-            <h1>Routines page!</h1>
+            <h1 id="routinePageTitle">curious about other user's workout routines? you're in the right place!</h1>
+            {loggedIn ? <div><Link to="/my-routines" className="routinesLinks">See your routines!</Link> <Link to="/new-routine" className="routinesLinks">Create Routine!</Link></div> : null}
             { routines.length ?  routines.map((routine, idx) =>{
                 return(
                     <div id="routine-card" key={idx}>
-                        <Link to={`/${routine.creatorName}/routines`}><h4>{routine.creatorName}</h4></Link>
-                        <h3>{routine.name}</h3>
-                        <p>{routine.goal}</p>
+                        <Link to={`/${routine.creatorName}/routines`} id="routinesPageCreatorName"><h4>{routine.creatorName}</h4></Link>
+                        <h3 className="beforeContent title">{routine.name}</h3>
+                        <p> <span className="beforeContent">Goal: </span>{routine.goal}</p>
                         <div>
                             { routine.activities?.length ? routine.activities.map((activity, idx)=>{
                                 return(
                                     <div key={idx} className="activity-card-onRoutine">
-                                        <Link to={`/routines/${activity.id}`}><h5>{activity.name}</h5></Link>
-                                        <p>{activity.description}</p>
-                                        <p>{activity.duration} minutes</p>
-                                        <p>x{activity.count}</p>
+                                        <Link to={`/routines/${activity.id}`} className="activityOnRoutineName"><h5>{activity.name}</h5></Link>
+                                        <p><span className="beforeContent">Description: </span>{activity.description}</p>
+                                        <p><span className="beforeContent">Duration: </span>{activity.duration} minutes</p>
+                                        <p><span className="beforeContent">Count: </span>x{activity.count}</p>
                                     </div>
                                 )
                             }) : null}

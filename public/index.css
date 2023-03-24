@@ -114,13 +114,132 @@ body {
     height: 100%;
     background-color: white;
 }
-#routine-card, .public-user-routines, .public-routine-activities {
+ .public-user-routines, .public-routine-activities {
     border: 1px solid black;
     padding: 1rem;
     margin: 2rem;
     text-align: center;
     background-color: white;
 }
+
+#routinePageTitle{
+    font-family: 'Righteous', sans-serif;
+    color: #FEF5EC;
+}
+
+.routinesLinks{
+    background-color: #FEF5EC;
+    text-decoration: none;
+    padding: 7px;
+    margin: 10px;
+    border-radius: 35px;
+    font-family: 'Righteous', sans-serif;
+    color: #F25C54;
+    box-shadow: 3px 3px 4px #F25C54;
+    transition: ease-in;
+    transition-duration: 0.3s;
+}
+
+.routinesLinks:hover{
+    background-color: #F25C54;
+    color: #FEF5EC;
+    box-shadow: 4px 4px 5px #FEF5EC;
+    transition: ease-in;
+    transition-duration: 0.3s;
+}
+
+#routine-card{
+    background-color: #FEF5EC;
+    width: 50%;
+    margin: 2rem;
+    padding: 15px;
+    border-radius: 35px;
+    box-shadow: 4px 4px 5px #F25C54;
+    text-align: center;
+    font-family: 'Comfortaa', sans-serif;
+}
+
+#routine-card a{
+    color: #F27059;
+    transition: ease-in;
+    transition-duration: 0.3s;
+}
+
+#routine-card a:hover{
+    border-bottom: 3px solid #F25C54;
+    /* animation: pulse;
+    animation-duration: 1s; */
+    transition: ease-in;
+    transition-duration: 0.3s;
+}
+
+.beforeContent{
+    color: #F25C54;
+    font-family: 'Righteous', sans-serif;
+}
+
+.beforeContent.title{
+    letter-spacing: 2px;
+    font-size: 17pt;
+}
+
+#routinesPage{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+#routinesPage a{
+    text-decoration: none;
+}
+
+#routinesPageCreatorName{
+    text-decoration: none;
+    text-align: right;
+    margin-right: 10px;
+    color: #F27059;
+    /* border-bottom: 10px dashed #F4845F; */
+}
+
+#routinesPageCreatorName:hover{
+    /* border-bottom: 3px solid #F25C54; */
+    /* color: hotpink; */
+    /* text-decoration:  2px underline #F25C54; */
+    animation: shakeX;
+    animation-duration: 5s;
+    /* transition: ease-in;
+    transition-duration: 0.3s; */
+}
+
+.activity-card-onRoutine{
+    border: 3px solid #F25C54;
+    border-radius: 35px;
+    margin: 0.5rem;
+}
+
+.activityOnRoutineName{
+    /* font-weight: 700; */
+    font-size: 15pt;
+}
+
+
+/*
+#routine-card a{
+    color: #F27059;
+    transition: ease-in;
+    transition-duration: 0.3s;
+}
+
+#routine-card a:hover{
+    border-bottom: 3px solid #F25C54;
+    /* animation: pulse;
+    animation-duration: 1s; */
+    /* transition: ease-in;
+    transition-duration: 0.3s;
+} */
+
 
 #myRoutinesMessage{
     background-color: #FEF5EC;
