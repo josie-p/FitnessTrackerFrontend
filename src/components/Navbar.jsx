@@ -19,11 +19,12 @@ const Navbar = ({token, setToken, loggedIn, setLoggedIn}) => {
           <Link to="/routines"><button>routines</button></Link>
           <Link to="/activities"><button>activities</button></Link>
        
-          { loggedIn ? <Link><button onClick = { () => {setToken(""); 
-          localStorage.setItem("token", "");
-          localStorage.setItem("username", "");
-          setLoggedIn(false);  
-          console.log("logged out!");
+          { loggedIn ? <Link to="./"><button onClick = { () => {
+            setToken(""); 
+            localStorage.setItem("token", "");
+            localStorage.setItem("username", "");
+            setLoggedIn(false);  
+            console.log("logged out!");
           }}>logout</button></Link>  : null}
 
         <span className="material-symbols-outlined" title="See Your Routines!" onClick = {() => {        //add some type of message telling user this is their "profile"
