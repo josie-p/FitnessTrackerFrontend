@@ -21,7 +21,6 @@ const EditRoutine = () => {
   };
 
   useEffect(() => {
-    console.log(routines, "routines from edit");
     if (routines?.length) {
       const findCurrentRoutine = routines.filter((routine) => {
         if (routine.id === Number(id)) {
@@ -32,7 +31,6 @@ const EditRoutine = () => {
       });
 
       const currentRoutine = findCurrentRoutine[0];
-      console.log(currentRoutine, "current routine");
       if (currentRoutine?.length) {
         setGoal(currentRoutine.goal);
         setName(currentRoutine.name);
