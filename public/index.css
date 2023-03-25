@@ -1,766 +1,793 @@
-/* color: 
-#FEF5EC - linen
-*/
-
 /* imports */
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;700&family=Monoton&family=Righteous&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;700&family=Monoton&family=Righteous&display=swap");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css");
 
-html{
-    min-height: 100%;
-    scroll-behavior: smooth;
+html {
+  min-height: 100%;
+  scroll-behavior: smooth;
 }
 body {
-    margin: 0;
-    height: 100%;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    /* background: linear-gradient(to right top, #F3A712, #7D82B8); */
-    background: linear-gradient(#F27059, #F7B267) fixed;
+  margin: 0;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background: linear-gradient(#f27059, #f7b267) fixed;
 }
 
 #navbar {
-    background-color: #F25C54;
-    color: #FEF5EC;
-    display: flex;
-    align-items: center;
-    flex-grow: 1;
-    justify-content: space-between;
-    max-height: 10%;
-    min-height: 40px;
-    font-size: 18pt;
-    /* margin-bottom: 5px; */
-    /* border-bottom: 5px dashed #F7B267; */
+  background-color: #f25c54;
+  color: #fef5ec;
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  justify-content: space-between;
+  max-height: 10%;
+  min-height: 40px;
+  font-size: 18pt;
 }
-#siteName{
-    display: flex;
+#siteName {
+  display: flex;
 }
-.navLinks{
-    display: flex;
-    align-items: center;
+.navLinks {
+  display: flex;
+  align-items: center;
 }
 
-.navLinks button{
-    background-color: #F7B267;
-    height: 30px;
-    width: fit-content;
-    border: none;
-    border-radius: 35px;
-    font-family: 'Righteous', sans-serif;
-    color: white;
-    box-shadow: 2px 2px 3px white;
-    transition: ease-in;
-    transition-duration: 0.3s;
-    font-size: 15pt;
-    padding-right: 8px;
-    padding-left: 8px;
+.navLinks button {
+  background-color: #f7b267;
+  height: 30px;
+  width: fit-content;
+  border: none;
+  border-radius: 35px;
+  font-family: "Righteous", sans-serif;
+  color: white;
+  box-shadow: 2px 2px 3px white;
+  transition: ease-in;
+  transition-duration: 0.3s;
+  font-size: 15pt;
+  padding-right: 8px;
+  padding-left: 8px;
 }
 
-.navLinks button:hover{
-    background-color: #F79D65;
-    color: #F25C54;
-    box-shadow: 3px 3px 4px white;
-    transition: ease-in;
-    transition-duration: 0.3s;
+.navLinks button:hover {
+  background-color: #f79d65;
+  color: #f25c54;
+  box-shadow: 3px 3px 4px white;
+  transition: ease-in;
+  transition-duration: 0.3s;
 }
 
-#navbar a{
-    margin: 5px;
-    padding: 5px;
-    text-decoration: none;
+#navbar a {
+  margin: 5px;
+  padding: 5px;
+  text-decoration: none;
 }
 
-#navbar h2{
-    font-family: 'Monoton', sans-serif;
-    letter-spacing: 2px;
-    /* color: #f6b978; */
+#navbar h2 {
+  font-family: "Monoton", sans-serif;
+  letter-spacing: 2px;
 }
 
 .material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 50,
-  'wght' 1000,
-  'GRAD' 0,
-  'opsz' 48;
-  color: #F7B267;
+  font-variation-settings: "FILL" 50, "wght" 1000, "GRAD" 0, "opsz" 48;
+  color: #f7b267;
   background-color: white;
   border-radius: 50%;
   margin: 10px;
   padding: 10px;
-  box-shadow: 2px 2px 3px #F7B267;
+  box-shadow: 2px 2px 3px #f7b267;
   transition: ease-in;
-    transition-duration: 0.3s;
+  transition-duration: 0.3s;
 }
 
-.material-symbols-outlined:hover{
-    color: white;
-    background-color: #F79D65;
-    box-shadow: 3px 3px 4px #F7B267;
-    transition: ease-in;
-    transition-duration: 0.3s;
+.material-symbols-outlined:hover {
+  color: white;
+  background-color: #f79d65;
+  box-shadow: 3px 3px 4px #f7b267;
+  transition: ease-in;
+  transition-duration: 0.3s;
 }
-
 
 .tangerineIcon {
-    height: 40px;
-    margin: auto;
-    padding-right: 8px;
-    padding-left: 5px;
+  height: 40px;
+  margin: auto;
+  padding-right: 8px;
+  padding-left: 5px;
 }
 
- .public-user-routines, .public-routine-activities {
-    border: 1px solid black;
-    padding: 1rem;
-    margin: 2rem;
-    text-align: center;
-    background-color: white;
+.public-user-routines,
+.public-routine-activities {
+  border: 1px solid black;
+  padding: 1rem;
+  margin: 2rem;
+  text-align: center;
+  background-color: white;
 }
 
-#routinePageTitle{
-    font-family: 'Righteous', sans-serif;
-    color: #FEF5EC;
+#routinePageTitle {
+  font-family: "Righteous", sans-serif;
+  color: #fef5ec;
 }
 
-.routinesLinks{
-    background-color: #FEF5EC;
-    text-decoration: none;
-    padding: 7px;
-    margin: 10px;
-    border-radius: 35px;
-    font-family: 'Righteous', sans-serif;
-    color: #F25C54;
-    box-shadow: 3px 3px 4px #F25C54;
-    transition: ease-in;
-    transition-duration: 0.3s;
+.routinesLinks {
+  background-color: #fef5ec;
+  text-decoration: none;
+  padding: 7px;
+  margin: 10px;
+  border-radius: 35px;
+  font-family: "Righteous", sans-serif;
+  color: #f25c54;
+  box-shadow: 3px 3px 4px #f25c54;
+  transition: ease-in;
+  transition-duration: 0.3s;
 }
 
-.routinesLinks:hover{
-    background-color: #F25C54;
-    color: #FEF5EC;
-    box-shadow: 4px 4px 5px #FEF5EC;
-    transition: ease-in;
-    transition-duration: 0.3s;
+.routinesLinks:hover {
+  background-color: #f25c54;
+  color: #fef5ec;
+  box-shadow: 4px 4px 5px #fef5ec;
+  transition: ease-in;
+  transition-duration: 0.3s;
 }
 
-#routine-card{
-    background-color: #FEF5EC;
-    width: 50%;
-    margin: 2rem;
-    padding: 15px;
-    border-radius: 35px;
-    box-shadow: 4px 4px 5px #F25C54;
-    text-align: center;
-    font-family: 'Comfortaa', sans-serif;
+#routine-card {
+  background-color: #fef5ec;
+  width: 50%;
+  margin: 2rem;
+  padding: 15px;
+  border-radius: 35px;
+  box-shadow: 4px 4px 5px #f25c54;
+  text-align: center;
+  font-family: "Comfortaa", sans-serif;
 }
 
-#routine-card a{
-    color: #F27059;
-    transition: ease-in;
-    transition-duration: 0.3s;
+#routine-card a {
+  color: #f27059;
+  transition: ease-in;
+  transition-duration: 0.3s;
 }
 
-#routine-card a:hover{
-    border-bottom: 3px solid #F25C54;
-    /* animation: pulse;
-    animation-duration: 1s; */
-    transition: ease-in;
-    transition-duration: 0.3s;
+#routine-card a:hover {
+  border-bottom: 3px solid #f25c54;
+  transition: ease-in;
+  transition-duration: 0.3s;
 }
 
-.beforeContent{
-    color: #F25C54;
-    font-family: 'Righteous', sans-serif;
+.beforeContent {
+  color: #f25c54;
+  font-family: "Righteous", sans-serif;
 }
 
-.beforeContent.title{
-    letter-spacing: 2px;
-    font-size: 17pt;
+.beforeContent.title {
+  letter-spacing: 2px;
+  font-size: 17pt;
 }
 
-#routinesPage{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 15px;
+#routinesPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15px;
 }
 
-#routinesPage a{
-    text-decoration: none;
+#routinesPage a {
+  text-decoration: none;
 }
 
-#routinesPageCreatorName{
-    text-decoration: none;
-    text-align: right;
-    margin-right: 10px;
-    color: #F27059;
-    border-bottom: 2px solid #F25C54;
-    padding: 10px;
-    transition: ease-in;
-    transition-duration: 0.3s;
+#routinesPageCreatorName {
+  text-decoration: none;
+  text-align: right;
+  margin-right: 10px;
+  color: #f27059;
+  border-bottom: 2px solid #f25c54;
+  padding: 10px;
+  transition: ease-in;
+  transition-duration: 0.3s;
 }
 
-#routinesPageCreatorName:hover{
-    border-bottom: 4px solid #F25C54;
-    animation: pulse;
-    animation-duration: 1s;
-    transition: ease-in;
-    transition-duration: 0.3s;
+#routinesPageCreatorName:hover {
+  border-bottom: 4px solid #f25c54;
+  animation: pulse;
+  animation-duration: 1s;
+  transition: ease-in;
+  transition-duration: 0.3s;
 }
 
-.activity-card-onRoutine{
-    border: 3px solid #F25C54;
-    border-radius: 35px;
-    padding: 1.5rem;
-    margin: 0.5rem;
+.activity-card-onRoutine {
+  border: 3px solid #f25c54;
+  border-radius: 35px;
+  padding: 1.5rem;
+  margin: 0.5rem;
 }
 
-.activityOnRoutineName{
-    border-bottom: 5px dotted #F4845F;
-    margin-right: 5px;
-    margin-left: 5px;
-    font-size: 15pt;
-    padding-bottom: 10px;
-    transition: ease;
-    transition-duration: 0.3s;
+.activityOnRoutineName {
+  border-bottom: 5px dotted #f4845f;
+  margin-right: 5px;
+  margin-left: 5px;
+  font-size: 15pt;
+  padding-bottom: 10px;
+  transition: ease;
+  transition-duration: 0.3s;
 }
 
-.activityOnRoutineName:hover{
-    border-bottom: 6px solid #F27059;
-    animation: pulse;
-    animation-duration: 1s;
-    transition: ease;
-    transition-duration: 0.3s;
+.activityOnRoutineName:hover {
+  border-bottom: 6px solid #f27059;
+  animation: pulse;
+  animation-duration: 1s;
+  transition: ease;
+  transition-duration: 0.3s;
 }
 
-
-/*
-#routine-card a{
-    color: #F27059;
-    transition: ease-in;
-    transition-duration: 0.3s;
+#myRoutinesMessage {
+  background-color: #fef5ec;
+  padding: 10px;
+  font-family: "Comfortaa", sans-serif;
+  position: fixed;
+  right: 0;
+  font-size: 10pt;
+  color: #f4845f;
+  border: 5px dotted #f7b267;
+  animation: pulse;
+  animation-duration: 2s;
 }
 
-#routine-card a:hover{
-    border-bottom: 3px solid #F25C54;
-    /* animation: pulse;
-    animation-duration: 1s; */
-    /* transition: ease-in;
-    transition-duration: 0.3s;
-} */
-
-
-#myRoutinesMessage{
-    background-color: #FEF5EC;
-    padding: 10px;
-    font-family: 'Comfortaa', sans-serif;
-    position:fixed;
-    right: 0;
-    /* border-radius: 35px; */
-    font-size: 10pt;
-    color: #F4845F;
-    border: 5px dotted #F7B267;
-    animation: pulse;
-    animation-duration: 2s;
-}
-
-#timeout{
-    display: none;
+#timeout {
+  display: none;
 }
 
 /* home page */
-#homePage{
-    background-color: #FEF5EC;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+#homePage {
+  background-color: #fef5ec;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-#holdHomeContent{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 100%;
-}
-
-#topHomePage{
-    text-align: center;
-    margin-top: 20px;
-    color: #F4845F;
-    font-family: 'Righteous', sans-serif;
+#holdHomeContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
 }
 
-#topHomePage h1{
-    font-family: 'Monoton', sans-serif;
-    color: #F27059;
-    letter-spacing: 2px;
-    width: fit-content;
+#topHomePage {
+  text-align: center;
+  margin-top: 20px;
+  color: #f4845f;
+  font-family: "Righteous", sans-serif;
 }
 
-#topHomePage h3{
-    font-size: 25pt;
-}
-#WelcomeHomeText{
-    overflow: auto;
-    
-}
-.logo{
-    height: 70px;
-    margin-right: 5px;
-    margin-left: 5px;
+#topHomePage h1 {
+  font-family: "Monoton", sans-serif;
+  color: #f27059;
+  letter-spacing: 2px;
+  width: fit-content;
 }
 
-#leftHomePage{
-    display: flex;
-    flex-direction: column;
-    flex: 2;
-    /* border-right: #F7B267 dotted 10px; */
-    margin-right: 15px;
-    padding: 5px;
-    font-size: 40pt;
-    margin-left: 10px;
+#topHomePage h3 {
+  font-size: 25pt;
+}
+#WelcomeHomeText {
+  overflow: auto;
+}
+.logo {
+  height: 70px;
+  margin-right: 5px;
+  margin-left: 5px;
 }
 
-#topHomePage h2{
-    font-family: 'Righteous', sans-serif;
-    background:  -webkit-linear-gradient(#F7B267, #F4845F, #F25C54);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-size: 40pt;
+#leftHomePage {
+  display: flex;
+  flex-direction: column;
+  flex: 2;
+  margin-right: 15px;
+  padding: 5px;
+  font-size: 40pt;
+  margin-left: 10px;
 }
 
-#rightHomePage{
-    display: flex;
-    flex-direction: column;
-    /* flex: 3; */
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    /* width: 50%; */
-    margin-right: 10px;
-    margin-left: 10px;
+#topHomePage h2 {
+  font-family: "Righteous", sans-serif;
+  background: -webkit-linear-gradient(#f7b267, #f4845f, #f25c54);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 40pt;
 }
 
-#rightHomePage h3{
-    font-family: 'Righteous', sans-serif;
-    font-size: 20pt;
-    color: #F25C54;
+#rightHomePage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-right: 10px;
+  margin-left: 10px;
 }
 
-#rightHomePage h1{
-    font-family: 'Righteous', sans-serif;
-    color: #F25C54;
+#rightHomePage h3 {
+  font-family: "Righteous", sans-serif;
+  font-size: 20pt;
+  color: #f25c54;
 }
 
-#reviews{
-    display: flex;
-    flex-direction: row;
-    background-color: #F25C54;
-    border-radius: 35px;
-    max-width: 60%;
+#rightHomePage h1 {
+  font-family: "Righteous", sans-serif;
+  color: #f25c54;
 }
 
-.review-card{
-    border-right: 2px solid #F7B267;
-    padding: 15px;
-    margin: 5px;
-    color: white;
-    font-family: 'Comfortaa', sans-serif;
+#reviews {
+  display: flex;
+  flex-direction: row;
+  background-color: #f25c54;
+  border-radius: 35px;
+  max-width: 60%;
 }
 
-.review-card:last-of-type{
-    border-right: none;
+.review-card {
+  border-right: 2px solid #f7b267;
+  padding: 15px;
+  margin: 5px;
+  color: white;
+  font-family: "Comfortaa", sans-serif;
 }
 
-
-.material-icons{
-    background:  -webkit-linear-gradient(  #F4845F, #F79D65 ,  #F7B267);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: #F25C54;
+.review-card:last-of-type {
+  border-right: none;
 }
 
-#routinesButton, .homePageButtons{
-    width: fit-content;
-    border: none;
-    border-radius: 35px;
-    /* background-color: #F7B267; */
-    padding: 7px;
-    margin: 5px;
-    font-family: 'Righteous', sans-serif;
-    /* color: #FEF5EC; */
-    /* box-shadow: 2px 2px 3px #F27059; */
-    transition: ease-in;
-    transition-duration: 0.3s;
-    font-size: 13pt;
-    background-color: #F25C54;
-    color: #FEF5EC;
-    box-shadow: 3px 3px 4px #F7B267;
+.material-icons {
+  background: -webkit-linear-gradient(#f4845f, #f79d65, #f7b267);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #f25c54;
 }
 
-#routinesButton:hover, .homePageButtons:hover{
-    /* background-color: #F25C54;
-    color: #FEF5EC;
-    box-shadow: 3px 3px 4px #F7B267; */
-    background-color: #F7B267;
-    color: #FEF5EC;
-    box-shadow: 2px 2px 3px #F27059;
-    transition: ease-in;
-    transition-duration: 0.3s;
+#routinesButton,
+.homePageButtons {
+  width: fit-content;
+  border: none;
+  border-radius: 35px;
+  padding: 7px;
+  margin: 5px;
+  font-family: "Righteous", sans-serif;
+  transition: ease-in;
+  transition-duration: 0.3s;
+  font-size: 13pt;
+  background-color: #f25c54;
+  color: #fef5ec;
+  box-shadow: 3px 3px 4px #f7b267;
 }
 
-#checkRoutines{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+#routinesButton:hover,
+.homePageButtons:hover {
+  background-color: #f7b267;
+  color: #fef5ec;
+  box-shadow: 2px 2px 3px #f27059;
+  transition: ease-in;
+  transition-duration: 0.3s;
 }
-.itsNot{
-    color:#F4845F;
+
+#checkRoutines {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.itsNot {
+  color: #f4845f;
 }
 
 /* my Routines Page */
 
-#myRoutinesContainer{
-    margin-left: 10px;
-    margin-right: 10px;
+#myRoutinesContainer {
+  margin-left: 10px;
+  margin-right: 10px;
 }
-#myRoutinesContainer a{
-    text-decoration: none;
-    border: none;
+#myRoutinesContainer a {
+  text-decoration: none;
+  border: none;
 }
-#welcomeMyRoutines{
-    color:#FEF5EC;
-    font-family: "Righteous", sans-serif;
-    font-size: 30pt;
-    border-bottom: 5px dashed #F25C54;
-    animation: shakeX;
-    animation-duration: 2s;
-    padding-bottom: 5px;
+#welcomeMyRoutines {
+  color: #fef5ec;
+  font-family: "Righteous", sans-serif;
+  font-size: 30pt;
+  border-bottom: 5px dashed #f25c54;
+  animation: shakeX;
+  animation-duration: 2s;
+  padding-bottom: 5px;
 }
-#yourRoutinesHolder{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+#yourRoutinesHolder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-#yourRoutinesHolder h2{
-    font-family: "Righteous", sans-serif;
-    font-size: 25pt;
-    color: #FEF5EC;
-    text-shadow: #F7B267 4px 4px 5px;
+#yourRoutinesHolder h2 {
+  font-family: "Righteous", sans-serif;
+  font-size: 25pt;
+  color: #fef5ec;
+  text-shadow: #f7b267 4px 4px 5px;
 }
-#myRoutinesCreateNewButton{
-    float: right;
-    margin-right: 60px;
-    padding: 8px;
-    border: none;
-    border-radius: 35px;
-    background-color: #FEF5EC;
-    font-family: 'Righteous', sans-serif;
-    color: #F25C54;
-    box-shadow: 3px 3px 4px #F25C54;
-    transition: ease-in;
-    transition-duration: 0.3s;
-    font-size: 13pt;
+#myRoutinesCreateNewButton {
+  float: right;
+  margin-right: 60px;
+  padding: 8px;
+  border: none;
+  border-radius: 35px;
+  background-color: #fef5ec;
+  font-family: "Righteous", sans-serif;
+  color: #f25c54;
+  box-shadow: 3px 3px 4px #f25c54;
+  transition: ease-in;
+  transition-duration: 0.3s;
+  font-size: 13pt;
 }
-#myRoutinesCreateNewButton:hover{
-    background-color: #F25C54;
-    color: #FEF5EC;
-    box-shadow: 4px 4px 5px #FEF5EC;
-    transition: ease-in;
-    transition-duration: 0.3s;
+#myRoutinesCreateNewButton:hover {
+  background-color: #f25c54;
+  color: #fef5ec;
+  box-shadow: 4px 4px 5px #fef5ec;
+  transition: ease-in;
+  transition-duration: 0.3s;
 }
-#add-activity{
-    font-family: "Comfortaa", sans-serif;
-    font-weight: 700;
-    background-color: #ffdeba;
-    color: #F25C54;
-    font-size: 13pt;
-    margin-right: 10px;
-    margin-top: 5px;
-    margin-bottom: 10px;
-    padding: 5px;
-    border: none;
-    border-radius: 35px;
+#add-activity {
+  font-family: "Comfortaa", sans-serif;
+  font-weight: 700;
+  background-color: #ffdeba;
+  color: #f25c54;
+  font-size: 13pt;
+  margin-right: 10px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  padding: 5px;
+  border: none;
+  border-radius: 35px;
 }
-.addActivityLabel{
-    color: #F27059;
-    font-family: 'Righteous', sans-serif;
-    font-size: 17pt;
+.addActivityLabel {
+  color: #f27059;
+  font-family: "Righteous", sans-serif;
+  font-size: 17pt;
 }
-.myRoutinesButtons{
-    border: none;
-    border-radius: 35px;
-    box-shadow: 3px 3px 4px #F25C54;
-    padding: 7px;
-    background-color: #F79D65;
-    color: #FEF5EC;
-    font-family: "Righteous", sans-serif;
-    margin: 10px;
-    transition: ease-in;
-    transition-duration: 0.3s;
+.myRoutinesButtons {
+  border: none;
+  border-radius: 35px;
+  box-shadow: 3px 3px 4px #f25c54;
+  padding: 7px;
+  background-color: #f79d65;
+  color: #fef5ec;
+  font-family: "Righteous", sans-serif;
+  margin: 10px;
+  transition: ease-in;
+  transition-duration: 0.3s;
 }
-.myRoutinesButtons:hover{
-    background-color: #F25C54;
-    color: #ffdeba;
-    box-shadow: 4px 4px 5px #F7B267;
-    transition: ease-in;
-    transition-duration: 0.3s;
+.myRoutinesButtons:hover {
+  background-color: #f25c54;
+  color: #ffdeba;
+  box-shadow: 4px 4px 5px #f7b267;
+  transition: ease-in;
+  transition-duration: 0.3s;
 }
-.activityOnMyRoutinesName{
-    color: #F27059;
-    font-size: 15pt;
+.activityOnMyRoutinesName {
+  color: #f27059;
+  font-size: 15pt;
 }
-.addActivityLabels{
-    font-weight: 700;
-    color:#F25C54;
+.addActivityLabels {
+  font-weight: 700;
+  color: #f25c54;
 }
-.addActivityInputs{
-    background-color: #ffdeba;
-    border: none;
-    border-radius: 35px;
-    font-family: "Comfortaa", sans-serif;
-    font-size: 12pt;
-    color:#F25C54;
-    padding: 8px;
-}
-
-#publicRoutinesByActivityPage, #publicRoutinesByUserPage{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Comfortaa', sans-serif;
+.addActivityInputs {
+  background-color: #ffdeba;
+  border: none;
+  border-radius: 35px;
+  font-family: "Comfortaa", sans-serif;
+  font-size: 12pt;
+  color: #f25c54;
+  padding: 8px;
 }
 
-#publicRoutinesByActivityPage h1{
-    font-family: 'Righteous', sans-serif;
-    color: #FEF5EC;
+#publicRoutinesByActivityPage,
+#publicRoutinesByUserPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Comfortaa", sans-serif;
+}
+
+#publicRoutinesByActivityPage h1 {
+  font-family: "Righteous", sans-serif;
+  color: #fef5ec;
 }
 
 /* public routine lists! */
-.public-routine-cards{
-    background-color: #FEF5EC;
-    width: 50%;
-    padding: 20px;
-    margin: 15px;
-    border-radius: 35px;
-    box-shadow: 4px 4px 5px #F25C54;
-    text-align: center;
+.public-routine-cards {
+  background-color: #fef5ec;
+  width: 50%;
+  padding: 20px;
+  margin: 15px;
+  border-radius: 35px;
+  box-shadow: 4px 4px 5px #f25c54;
+  text-align: center;
 }
 
-.activity-card-onPublicRoutine{
-    margin: 0.5rem;
-    border: 3px solid #F25C54;
-    border-radius: 35px;
-    padding: 1.5rem;
+.activity-card-onPublicRoutine {
+  margin: 0.5rem;
+  border: 3px solid #f25c54;
+  border-radius: 35px;
+  padding: 1.5rem;
 }
 
-.publicRoutinesActivityName{
-    border-bottom: 5px dotted #F4845F;
-    margin-right: 5px;
-    margin-left: 5px;
-    font-size: 15pt;
-    font-weight: 700;
-    padding-bottom: 10px;
-    color: #F25C54;
-    transition: ease;
-    transition-duration: 0.3s;
+.publicRoutinesActivityName {
+  border-bottom: 5px dotted #f4845f;
+  margin-right: 5px;
+  margin-left: 5px;
+  font-size: 15pt;
+  font-weight: 700;
+  padding-bottom: 10px;
+  color: #f25c54;
+  transition: ease;
+  transition-duration: 0.3s;
 }
 
-.publicRoutinesActivityName:hover{
-    border-bottom: 6px solid #F27059;
-    animation: pulse;
-    animation-duration: 1s;
-    transition: ease;
-    transition-duration: 0.3s;
+.publicRoutinesActivityName:hover {
+  border-bottom: 6px solid #f27059;
+  animation: pulse;
+  animation-duration: 1s;
+  transition: ease;
+  transition-duration: 0.3s;
 }
 
 .publicRoutinesCreatorName {
-    text-decoration: none;
-    text-align: right;
-    margin-right: 10px;
-    color: #F27059;
-    border-bottom: 2px solid #F25C54;
-    padding: 10px;
-    transition: ease-in;
-    transition-duration: 0.3s;
+  text-decoration: none;
+  text-align: right;
+  margin-right: 10px;
+  color: #f27059;
+  border-bottom: 2px solid #f25c54;
+  padding: 10px;
+  transition: ease-in;
+  transition-duration: 0.3s;
 }
 
-.publicRoutinesCreatorName:hover{
-    border-bottom: 4px solid #F25C54;
-    animation: pulse;
-    animation-duration: 1s;
-    transition: ease-in;
-    transition-duration: 0.3s;
+.publicRoutinesCreatorName:hover {
+  border-bottom: 4px solid #f25c54;
+  animation: pulse;
+  animation-duration: 1s;
+  transition: ease-in;
+  transition-duration: 0.3s;
 }
 
-#activitiesPage{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+#activitiesPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-#activitiesPage h1{
-    font-family: 'Righteous', sans-serif;
-    color: #FEF5EC;
-    text-shadow: 4px 4px 5px #F7B267;
+#activitiesPage h1 {
+  font-family: "Righteous", sans-serif;
+  color: #fef5ec;
+  text-shadow: 4px 4px 5px #f7b267;
 }
 
-#activity-card{
-    background-color: #FEF5EC;
-    padding: 1.5rem;
-    margin: 0.5rem;
-    width: 45%;
-    font-family: 'Comfortaa', sans-serif;
-    border-radius: 35px;
-    border: 5px solid #F25C54;
-    box-shadow: 4px 4px 5px #F27059;
-
+#activity-card {
+  background-color: #fef5ec;
+  padding: 1.5rem;
+  margin: 0.5rem;
+  width: 45%;
+  font-family: "Comfortaa", sans-serif;
+  border-radius: 35px;
+  border: 5px solid #f25c54;
+  box-shadow: 4px 4px 5px #f27059;
 }
 
-#activity-card a{
-    text-decoration: none;
+#activity-card a {
+  text-decoration: none;
 }
 
-.beforeContent.title.onActivities{
-    border-bottom: 5px solid #F27059;
-    transition: ease-in;
-    transition-duration: 0.3s;
-
+.beforeContent.title.onActivities {
+  border-bottom: 5px solid #f27059;
+  transition: ease-in;
+  transition-duration: 0.3s;
 }
 
-.beforeContent.title.onActivities:hover{
-    border-bottom: 6px dotted #F27059;
-    transition: ease-in;
-    transition-duration: 0.3s;
+.beforeContent.title.onActivities:hover {
+  border-bottom: 6px dotted #f27059;
+  transition: ease-in;
+  transition-duration: 0.3s;
 }
 
-#create-activity-onActivities{
-    background-color: #FEF5EC;
-    color: #F25C54;
-    box-shadow: 3px 3px 4px #F25C54;
-    text-decoration: none;
-    padding: 7px;
-    border-radius: 35px;
-    font-family: 'Righteous', sans-serif;
-    transition: ease-in;
-    transition-duration: 0.3s;
-    font-size: 15pt;
+#create-activity-onActivities {
+  background-color: #fef5ec;
+  color: #f25c54;
+  box-shadow: 3px 3px 4px #f25c54;
+  text-decoration: none;
+  padding: 7px;
+  border-radius: 35px;
+  font-family: "Righteous", sans-serif;
+  transition: ease-in;
+  transition-duration: 0.3s;
+  font-size: 15pt;
 }
 
-#create-activity-onActivities:hover{
-    background-color: #F25C54;
-    color: #FEF5EC;
-    box-shadow: 3px 3px 4px #FEF5EC;
-    transition: ease-in;
-    transition-duration: 0.3s;
+#create-activity-onActivities:hover {
+  background-color: #f25c54;
+  color: #fef5ec;
+  box-shadow: 3px 3px 4px #fef5ec;
+  transition: ease-in;
+  transition-duration: 0.3s;
 }
-
 
 /* login and register page! */
-#registerPage, #loginPage{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+#registerPage,
+#loginPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-#registerPage h1, #registerPage h5, #loginPage h1{
-    color: #FEF5EC;
-    font-family: 'Righteous', sans-serif;
-    text-shadow: 4px 4px 5px #F7B267;
+#registerPage h1,
+#registerPage h5,
+#loginPage h1 {
+  color: #fef5ec;
+  font-family: "Righteous", sans-serif;
+  text-shadow: 4px 4px 5px #f7b267;
 }
 
-.signInForms{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-    background-color: #FEF5EC;
-    width: 45%;
-    padding: 2rem;
-    border-radius: 35px;
-    border: solid #F25C54 5px;
-    box-shadow: 4px 4px 5px #F27059;
+.signInForms {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  background-color: #fef5ec;
+  width: 45%;
+  padding: 2rem;
+  border-radius: 35px;
+  border: solid #f25c54 5px;
+  box-shadow: 4px 4px 5px #f27059;
 }
 
-.signInForms label, .create-edit-forms label{
-    font-family: 'Righteous', sans-serif;
-    letter-spacing: 1px;
-    color: #F25C54;
+.signInForms label,
+.create-edit-forms label {
+  font-family: "Righteous", sans-serif;
+  letter-spacing: 1px;
+  color: #f25c54;
 }
 
-.signInForms input, .create-edit-forms input, .create-edit-forms textarea{
-    font-family: 'Comfortaa', sans-serif;
-    border: none;
-    padding: 8px;
-    margin: 0.5rem;
-    border-radius: 35px;
-    background-color: #ffdeba;
-    color: #F25C54;
-    font-weight: 700;
+.signInForms input,
+.create-edit-forms input,
+.create-edit-forms textarea {
+  font-family: "Comfortaa", sans-serif;
+  border: none;
+  padding: 8px;
+  margin: 0.5rem;
+  border-radius: 35px;
+  background-color: #ffdeba;
+  color: #f25c54;
+  font-weight: 700;
 }
 
-.signInForms button, .signInForms a, .create-edit-forms button{
-    border: none;
-    padding: 8px;
-    background-color: #F25C54;
-    font-family: 'Righteous', sans-serif;
-    color: #FEF5EC;
-    border-radius: 35px;
-    box-shadow: 3px 3px 4px #F27059;
-    font-size: 13pt;
-    text-decoration: none;
-    transition: ease-in;
-    transition-duration: 0.3s;
+.signInForms button,
+.signInForms a,
+.create-edit-forms button {
+  border: none;
+  padding: 8px;
+  background-color: #f25c54;
+  font-family: "Righteous", sans-serif;
+  color: #fef5ec;
+  border-radius: 35px;
+  box-shadow: 3px 3px 4px #f27059;
+  font-size: 13pt;
+  text-decoration: none;
+  transition: ease-in;
+  transition-duration: 0.3s;
 }
 
-.signInForms button:hover, .signInForms a:hover, .create-edit-forms button:hover{
-    background-color: #ffdeba;
-    color: #F25C54;
-    box-shadow: 4px 4px 5px #F27059;
-    transition: ease-in;
-    transition-duration: 0.3s;
+.signInForms button:hover,
+.signInForms a:hover,
+.create-edit-forms button:hover {
+  background-color: #ffdeba;
+  color: #f25c54;
+  box-shadow: 4px 4px 5px #f27059;
+  transition: ease-in;
+  transition-duration: 0.3s;
 }
 
-.signInForms h4{
-    color: #F25C54;
-    font-family: 'Comfortaa', sans-serif;
+.signInForms h4 {
+  color: #f25c54;
+  font-family: "Comfortaa", sans-serif;
 }
 
 /* create & edit routine pages */
 
-.create-edit-forms{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #FEF5EC;
-    width: 45%;
-    padding: 2rem;
-    border:#F25C54 solid 5px;
-    border-radius: 35px;
+.create-edit-forms {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fef5ec;
+  width: 45%;
+  padding: 2rem;
+  border: #f25c54 solid 5px;
+  border-radius: 35px;
 }
-.hold-create-edit{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.hold-create-edit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.editTitle{
-    color: #FEF5EC;
-    font-family: 'Righteous', sans-serif;
-    text-shadow: 4px 4px 5px #F7B267;
-    text-align: center;
-    font-size: 30pt;
+.editTitle,
+#publicRoutinesByUserPage h1 {
+  color: #fef5ec;
+  font-family: "Righteous", sans-serif;
+  text-shadow: 4px 4px 5px #f7b267;
+  text-align: center;
+  font-size: 30pt;
 }
-.create-edit-forms input[type=checkbox]:checked{
-    -webkit-appearance: none;
-    accent-color: #F7B267;
+.create-edit-forms input[type="checkbox"]:checked {
+  -webkit-appearance: none;
+  accent-color: #f7b267;
 }
 
-.create-edit-forms input[type='checkbox']:checked:after {
-    content: '\2713';
-    color: #F25C54;
+.create-edit-forms input[type="checkbox"]:checked:after {
+  content: "\2713";
+  color: #f25c54;
+}
+
+#error-message {
+  background-color: #fef5ec;
+  font-family: "Comfortaa", sans-serif;
+  font-weight: 700;
+  text-align: center;
+  border-radius: 35px;
+  margin-top: 10px;
+  padding: 1.5rem;
+  border: 5px solid #f25c54;
+}
+
+#error-message h3 {
+  font-family: "Righteous", sans-serif;
+  color: #f25c54;
+}
+
+.loading-page {
+  font-family: "Righteous", sans-serif;
+  color: #fef5ec;
+  text-shadow: 4px 4px 5px #f7b267;
+}
+
+/* media queries */
+@media screen and (max-width: 540px) {
+  #navbar {
+    width: 100%;
+    flex-wrap: wrap;
   }
+
+  #myRoutinesMessage {
+    display: none;
+  }
+
+  #reviews {
+    flex-direction: column;
+  }
+
+  .review-card {
+    border-right: none;
+    border-bottom: 2px solid #f7b267;
+  }
+
+  .review-card:last-of-type {
+    border-bottom: none;
+  }
+
+  #yourRoutinesHolder {
+    width: 100%;
+  }
+
+  #add-activity {
+    width: 40%;
+  }
+
+  .addActivityInputs {
+    width: 40%;
+  }
+}

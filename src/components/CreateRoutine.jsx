@@ -4,19 +4,16 @@ import { createNewRoutineAPI } from "../api-adapter";
 import { ErrorMessage } from "./";
 
 const CreateRoutine = () =>{
-    const [token, setToken, , , , , routines, setRoutines] = useOutletContext();
+    const [token, , , , , , routines, setRoutines] = useOutletContext();
 
     const [name, setName] = useState("");
     const [goal, setGoal] = useState("");
     const [isPublic, setIsPublic] = useState(false);
-    // const [newRoutines, setNewRoutines] = useState([]);
     const [message, setMessage] = useState("");
-
     const navigate = useNavigate();
 
     const newRoutine = async (token, name, goal, isPublic) => {
         const response = await createNewRoutineAPI(token, name, goal, isPublic);
-        console.log(response);
 
         if(response?.id){
             const newRoutines = [...routines];
@@ -50,7 +47,6 @@ const CreateRoutine = () =>{
                     <label> Public Routine? </label>
                     <input type="checkbox" value = {isPublic} id="isPublicCheckBox" onChange={(e)=>{
                             setIsPublic(!isPublic);
-                            console.log(isPublic, "after click");
                     }}></input><br></br>
                     <button type="submit">Create New Routine</button>
                 </form>

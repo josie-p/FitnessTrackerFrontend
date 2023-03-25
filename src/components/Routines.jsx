@@ -1,9 +1,8 @@
-import React, {useState} from "react";
+import React from "react";
 import { useOutletContext, Link } from "react-router-dom";
 
 const Routines = () => {
-    const [token, setToken, loggedIn, setLoggedIn, , , routines, setRoutines] = useOutletContext();
-    console.log(routines, "routines from Routines page");
+    const [ , , loggedIn, , , , routines, ] = useOutletContext();
     return(
         <div id="routinesPage">
             <h1 id="routinePageTitle">curious about other user's workout routines? you're in the right place!</h1>
@@ -28,7 +27,7 @@ const Routines = () => {
                         </div>
                     </div>
                 )
-            }) : <h1>LOADING...</h1>}
+            }) : <h1 className="loading-page">LOADING...</h1>}
         </div>
     )
 }
