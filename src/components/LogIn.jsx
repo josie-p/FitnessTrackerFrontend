@@ -28,25 +28,27 @@ const LogIn = () => {
     }
 
     return(
-        <div>
+        <div id="loginPage">
             { message.length? <ErrorMessage message={message}/> : null }
             <h1> Please Login to continue! </h1>
+            <div className="signInForms">
             <form onSubmit={(e) => {
                 e.preventDefault();
                 login(username, password);
             }}>
-                <label>Username</label>
+                <label>Username</label><br></br>
                 <input type="text" onInput={(e) => {
                     setUsername(e.target.value);
-                }}></input>
-                <label>Password</label>
+                }}></input><br></br>
+                <label>Password</label><br></br>
                 <input type="password" onInput={(e) => {
                     setPassword(e.target.value);
-                }}></input>
+                }}></input><br></br>
                 <button type="submit">login</button>
                 <h4>Don't have an account?</h4>
                 <Link to="/register"> Register Here </Link>
             </form>
+            </div>
         </div>
     )
 }

@@ -108,8 +108,7 @@ body {
     padding-left: 5px;
 }
 
-/* #routinesPage, */
- #activitiesPage, #createActivityPage, #createRoutinePage, #editRoutinePage{
+/* #routinesPage, */ #createActivityPage, #createRoutinePage, #editRoutinePage{
     width: 100%;
     height: 100%;
     background-color: white;
@@ -595,4 +594,141 @@ body {
     animation-duration: 1s;
     transition: ease-in;
     transition-duration: 0.3s;
+}
+
+#activitiesPage{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#activitiesPage h1{
+    font-family: 'Righteous', sans-serif;
+    color: #FEF5EC;
+    text-shadow: 4px 4px 5px #F7B267;
+}
+
+#activity-card{
+    background-color: #FEF5EC;
+    padding: 1.5rem;
+    margin: 0.5rem;
+    width: 45%;
+    font-family: 'Comfortaa', sans-serif;
+    border-radius: 35px;
+    border: 5px solid #F25C54;
+    box-shadow: 4px 4px 5px #F27059;
+
+}
+
+#activity-card a{
+    text-decoration: none;
+}
+
+.beforeContent.title.onActivities{
+    border-bottom: 5px solid #F27059;
+    transition: ease-in;
+    transition-duration: 0.3s;
+
+}
+
+.beforeContent.title.onActivities:hover{
+    border-bottom: 6px dotted #F27059;
+    transition: ease-in;
+    transition-duration: 0.3s;
+}
+
+#create-activity-onActivities{
+    background-color: #FEF5EC;
+    color: #F25C54;
+    box-shadow: 3px 3px 4px #F25C54;
+    text-decoration: none;
+    padding: 7px;
+    border-radius: 35px;
+    font-family: 'Righteous', sans-serif;
+    transition: ease-in;
+    transition-duration: 0.3s;
+    font-size: 15pt;
+}
+
+#create-activity-onActivities:hover{
+    background-color: #F25C54;
+    color: #FEF5EC;
+    box-shadow: 3px 3px 4px #FEF5EC;
+    transition: ease-in;
+    transition-duration: 0.3s;
+}
+
+
+/* login and register page! */
+#registerPage, #loginPage{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#registerPage h1, #registerPage h5, #loginPage h1{
+    color: #FEF5EC;
+    font-family: 'Righteous', sans-serif;
+    text-shadow: 4px 4px 5px #F7B267;
+}
+
+.signInForms{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    background-color: #FEF5EC;
+    width: 45%;
+    padding: 2rem;
+    border-radius: 35px;
+    border: solid #F25C54 5px;
+    box-shadow: 4px 4px 5px #F27059;
+}
+
+.signInForms label{
+    font-family: 'Righteous', sans-serif;
+    letter-spacing: 1px;
+    color: #F25C54;
+}
+
+.signInForms input{
+    font-family: 'Comfortaa', sans-serif;
+    border: none;
+    padding: 8px;
+    margin: 0.5rem;
+    border-radius: 35px;
+    background-color: #ffdeba;
+    color: #F25C54;
+    font-weight: 700;
+}
+
+.signInForms button, .signInForms a{
+    border: none;
+    padding: 8px;
+    background-color: #F25C54;
+    font-family: 'Righteous', sans-serif;
+    color: #FEF5EC;
+    border-radius: 35px;
+    box-shadow: 3px 3px 4px #F27059;
+    font-size: 13pt;
+    text-decoration: none;
+    transition: ease-in;
+    transition-duration: 0.3s;
+}
+
+.signInForms button:hover, .signInForms a:hover{
+    background-color: #ffdeba;
+    color: #F25C54;
+    box-shadow: 4px 4px 5px #F27059;
+    transition: ease-in;
+    transition-duration: 0.3s;
+}
+
+.signInForms h4{
+    color: #F25C54;
+    font-family: 'Comfortaa', sans-serif;
+
 }
