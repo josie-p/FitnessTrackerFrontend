@@ -53,23 +53,25 @@ if(routines.length){
     // const currentRoutine = findCurrentRoutine[0];
     // console.log(currentRoutine);
     return(
-        <div id = "editRoutinePage">
-            <h1>
+        <div className="hold-create-edit">
+            <h1 className="editTitle">
                 edit your routine!
             </h1>
             {routines.length ? 
-            <form onSubmit={(e)=>{
-                e.preventDefault();
-                editRoutine();
-            }}>
-                <label>Name:</label>
-                <input type="text" value={name} onChange = {(e)=>{setName(e.target.value)}}></input>
-                <label>Goal:</label>
-                <textarea value={goal} onChange ={(e)=>{setGoal(e.target.value)}}></textarea>
-                <label>Public?</label>
-                <input type="checkbox" onChange={(e) => { setIsPublic(!isPublic) }}></input>
-                <button type="submit">submit</button>
-            </form>
+            <div className="create-edit-forms">
+                <form onSubmit={(e)=>{
+                    e.preventDefault();
+                    editRoutine();
+                }}>
+                    <label>Name:</label><br></br>
+                    <input type="text" value={name} onChange = {(e)=>{setName(e.target.value)}}></input><br></br>
+                    <label>Goal:</label><br></br>
+                    <textarea value={goal} onChange ={(e)=>{setGoal(e.target.value)}}></textarea><br></br>
+                    <label>Public?</label>
+                    <input type="checkbox" onChange={(e) => { setIsPublic(!isPublic) }}></input><br></br>
+                    <button type="submit">submit</button>
+                </form>
+            </div>
            : <h1> LOADING ... </h1> }
         </div>
     )

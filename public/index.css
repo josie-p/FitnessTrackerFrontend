@@ -108,11 +108,12 @@ body {
     padding-left: 5px;
 }
 
-/* #routinesPage, */ #createActivityPage, #createRoutinePage, #editRoutinePage{
+/* #routinesPage,{
     width: 100%;
     height: 100%;
     background-color: white;
-}
+} */
+
  .public-user-routines, .public-routine-activities {
     border: 1px solid black;
     padding: 1rem;
@@ -430,6 +431,10 @@ body {
     margin-left: 10px;
     margin-right: 10px;
 }
+#myRoutinesContainer a{
+    text-decoration: none;
+    border: none;
+}
 #welcomeMyRoutines{
     color:#FEF5EC;
     font-family: "Righteous", sans-serif;
@@ -688,13 +693,13 @@ body {
     box-shadow: 4px 4px 5px #F27059;
 }
 
-.signInForms label{
+.signInForms label, .create-edit-forms label{
     font-family: 'Righteous', sans-serif;
     letter-spacing: 1px;
     color: #F25C54;
 }
 
-.signInForms input{
+.signInForms input, .create-edit-forms input, .create-edit-forms textarea{
     font-family: 'Comfortaa', sans-serif;
     border: none;
     padding: 8px;
@@ -705,7 +710,7 @@ body {
     font-weight: 700;
 }
 
-.signInForms button, .signInForms a{
+.signInForms button, .signInForms a, .create-edit-forms button{
     border: none;
     padding: 8px;
     background-color: #F25C54;
@@ -719,7 +724,7 @@ body {
     transition-duration: 0.3s;
 }
 
-.signInForms button:hover, .signInForms a:hover{
+.signInForms button:hover, .signInForms a:hover, .create-edit-forms button:hover{
     background-color: #ffdeba;
     color: #F25C54;
     box-shadow: 4px 4px 5px #F27059;
@@ -730,5 +735,38 @@ body {
 .signInForms h4{
     color: #F25C54;
     font-family: 'Comfortaa', sans-serif;
-
 }
+
+/* create & edit routine pages */
+
+.create-edit-forms{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #FEF5EC;
+    width: 45%;
+    padding: 2rem;
+    border:#F25C54 solid 5px;
+    border-radius: 35px;
+}
+.hold-create-edit{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.editTitle{
+    color: #FEF5EC;
+    font-family: 'Righteous', sans-serif;
+    text-shadow: 4px 4px 5px #F7B267;
+    text-align: center;
+    font-size: 30pt;
+}
+.create-edit-forms input[type=checkbox]:checked{
+    -webkit-appearance: none;
+    accent-color: #F7B267;
+}
+
+.create-edit-forms input[type='checkbox']:checked:after {
+    content: '\2713';
+    color: #F25C54;
+  }

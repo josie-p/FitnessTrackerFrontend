@@ -25,34 +25,36 @@ const CreateRoutine = () =>{
 
             setTimeout(() => {
                 navigate("/routines");
-            }, 3000);
+            }, 500);
     }else{
         setMessage("Oh no! It seems there's been a mistake- there may be another routine by that name already. Try again!");
     }
 }
     return(
-        <div id="createRoutinePage">
+        <div className="hold-create-edit">
            {message.length ? <ErrorMessage message={message} /> : null}
-            <h1> This is create routine</h1>
-            <form onSubmit={(e) => {
-                e.preventDefault();
-                newRoutine(token, name, goal, isPublic);
-            }}>
-                <label>Routine Name: </label>
-                <input type="text" placeholder="intense leg day" required onInput={(e)=>{
-                    setName(e.target.value);
-                }}></input>
-                <label> Goal: </label>
-                <textarea placeholder="grow my quads to an incredible size" required onInput={(e)=> {
-                    setGoal(e.target.value);
-                }}></textarea>
-                <label> Public Routine? </label>
-                <input type="checkbox" value = {isPublic} id="isPublicCheckBox" onChange={(e)=>{
-                        setIsPublic(!isPublic);
-                        console.log(isPublic, "after click");
-                }}></input>
-                <button type="submit">Create New Routine</button>
-            </form>
+            <h1 className="editTitle"> This is create routine</h1>
+            <div className="create-edit-forms">
+                <form onSubmit={(e) => {
+                    e.preventDefault();
+                    newRoutine(token, name, goal, isPublic);
+                }}>
+                    <label>Routine Name: </label><br></br>
+                    <input type="text" placeholder="intense leg day" required onInput={(e)=>{
+                        setName(e.target.value);
+                    }}></input><br></br>
+                    <label> Goal: </label><br></br>
+                    <textarea placeholder="grow my quads to an incredible size" required onInput={(e)=> {
+                        setGoal(e.target.value);
+                    }}></textarea><br></br>
+                    <label> Public Routine? </label>
+                    <input type="checkbox" value = {isPublic} id="isPublicCheckBox" onChange={(e)=>{
+                            setIsPublic(!isPublic);
+                            console.log(isPublic, "after click");
+                    }}></input><br></br>
+                    <button type="submit">Create New Routine</button>
+                </form>
+            </div>
         </div>
     )
 };
