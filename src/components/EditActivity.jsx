@@ -1,11 +1,9 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { editActivityAPI } from "../api-adapter";
 
 const EditActivity = ({ count, duration, routineActivityId }) => {
   const [newCount, setNewCount] = useState(count);
   const [newDuration, setNewDuration] = useState(duration);
-  const navigate = useNavigate();
 
   const editActivityFrontEnd = async () => {
     const response = await editActivityAPI(
@@ -23,8 +21,7 @@ const EditActivity = ({ count, duration, routineActivityId }) => {
           e.preventDefault();
           editActivityFrontEnd();
           setTimeout(() => {
-            console.log("I edited!");
-            navigate("/my-routines");
+            window.location.reload();
           }, 500);
         }}
       >

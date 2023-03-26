@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { EditActivity, ErrorMessage } from "./";
-import { useOutletContext, Link, useNavigate } from "react-router-dom";
 import {
   attachActivityToRoutineAPI,
   deleteActivityAPI,
@@ -20,8 +19,6 @@ const myRoutineCard = (props) => {
 
   const [isEdit, setIsEdit] = useState(false);
   const [message, setMessage] = useState("");
-
-  const navigate = useNavigate();
 
   const attachActivityToRoutine = async (
     routineId,
@@ -58,7 +55,7 @@ const myRoutineCard = (props) => {
 
       setTimeout(() => {
         if (response.id) {
-          navigate("/my-routines");
+          window.location.reload();
         }
       }, 500);
     } else {
@@ -79,7 +76,7 @@ const myRoutineCard = (props) => {
 
       setTimeout(() => {
         if (response?.id) {
-          navigate("/my-routines");
+          window.location.reload();
         }
       }, 500);
     } else {
