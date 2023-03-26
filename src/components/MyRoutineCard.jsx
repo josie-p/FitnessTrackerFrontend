@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useOutletContext, Link } from "react-router-dom";
 import { EditActivity, ErrorMessage } from "./";
 import {
   attachActivityToRoutineAPI,
@@ -41,7 +42,7 @@ const myRoutineCard = (props) => {
 
     setTimeout(() => {
       if (response.id) {
-        ;
+        window.location.reload();
       }
     }, 1000);
   };
